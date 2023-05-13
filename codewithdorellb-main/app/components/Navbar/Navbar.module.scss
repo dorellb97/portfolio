@@ -1,0 +1,276 @@
+@use "../../styles/various.module.scss" as var;
+@media screen and (min-width: 1024px) {
+    .back{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100px;
+    background: #F2F2FF;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(57, 17, 67, 0.1);
+    }
+    .backmenu .premenu{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .logo{
+        margin-left: 5%;
+        p{
+            font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 45px;
+    width: 265px;
+    background: radial-gradient(110% 620.1% at 50% 50%, #000000 0%, #8000ff 50.76%, #158EFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+        }
+    }
+    
+    .center{
+        display: flex;
+        flex-direction: row;
+        // gap: 50px;
+        width: 50%;
+        justify-content: space-around;
+        transition: 0.35s;
+        p:hover{
+            text-shadow: 0px 4px 4px #8A15FF;
+            transition: 0.35s;
+        }
+        @include var.navbar_text
+    }
+    
+    .last{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        margin-right: 5%;
+        transition: 0.35s;
+        img:hover{
+            transform: scale(1.1);
+            transition: 0.35s;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .back{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100px;
+    background: #F2F2FF;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(57, 17, 67, 0.1);
+
+    }
+    .backmenu .premenu{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .logo{
+        margin-left: 5%;
+        
+        p{
+            font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    width: 230px;
+    line-height: 45px;
+    background: radial-gradient(110% 620.1% at 50% 50%, #000000 0%, #8000ff 50.76%, #158EFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+        }
+    }
+    
+    .center{
+        display: flex;
+        flex-direction: row;
+        // gap: 50px;
+        width: 50%;
+        
+        justify-content: space-around;
+        transition: 0.35s;
+        p:hover{
+            text-shadow: 0px 4px 4px #8A15FF;
+            transition: 0.35s;
+        }
+        font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 45px;
+color: #07081F;
+    }
+    
+    .last{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        margin-right: 5%;
+        
+        transition: 0.35s;
+        img:hover{
+            transform: scale(1.1);
+            transition: 0.35s;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .back{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 65px;
+    background: #F2F2FF;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(57, 17, 67, 0.1);
+
+    }
+    
+    .logo{
+        margin-left: 5%;
+        
+        p{
+            font-family: 'Pacifico';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 45px;
+            background: radial-gradient(110% 620.1% at 50% 50%, #000000 0%, #8A15FF 81.76%, #158EFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    }
+    
+    .center{
+        display: none;
+    }
+    
+    .last{
+        display: none;
+    }
+    .menu{
+        // background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 20px;
+    }
+    
+    
+    
+      .animate_burger{
+        z-index: 500;
+        opacity: 0.7;
+      }
+      .animate_burger2{
+        opacity: 0.7;
+        z-index: 101 !important;
+        right: 30px;
+        margin-top: -18px;
+        left: auto;
+        position: absolute;
+      }
+      .backmenu{
+        display: flex;
+    
+        // height: 200px;
+        flex-direction: column;
+      }
+      .info_links{
+        position: absolute;
+        width: 70vw;
+        margin-top: -30px;
+        height: 30vw;
+        margin-left: -60vw;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid #07081f44;
+        backdrop-filter: blur(2vw);
+        border-radius: 3vw;
+        z-index: 50 !important;
+        display: flex;
+        gap: 1.5vw;
+        padding-top: 1.5vw;
+        flex-direction: column;
+       align-items: center;
+       div{
+        @include var.navbar_text_phone2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 7vw;
+        justify-content: center;
+       }
+       div:hover{
+        
+        text-shadow: 1vw 1vw 0  rgba(153, 10, 255, 0.432)
+       }
+        // margin-top: 100px;
+      }
+      .info_links_admin{
+        height: 50vw !important;
+      }
+    .box_contacts{
+      display: flex;
+      flex-direction: column;
+      gap: 6vw;
+      // margin-top: 7.5vw;
+      background-color: rgba(255, 255, 255, 0.65);
+      border-top: 1px solid rgb(205, 143, 255);
+      width: 100%  !important;
+      // height: 100%;
+      border-radius: 3vw;
+      height: 30vw !important;
+      div{
+        div{
+          width: 9vw;
+          height: 9vw;
+          border-radius: 25%;
+          border: 1px solid rgba(143, 143, 255, 0.35);
+          // background-color: rgba(255, 255, 255, 0.75);
+          transition: .35s;
+          img{
+            width: 7vw;
+            height: 7vw;
+          }
+        }
+        div:hover{
+          transition: .35s;
+          background-color: #07081F ;
+        }
+      }
+      .first_child{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+        // gap: 1vw;
+      }}
+}

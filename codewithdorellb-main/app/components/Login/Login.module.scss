@@ -1,0 +1,360 @@
+@use "../../styles/various.module.scss" as var;
+
+@media screen and (min-width: 1600px) {
+    .back{
+        height: 1200px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+    }
+
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        height: 580px;
+        align-items: center;
+        gap: 35px;
+        z-index: 2;
+        padding-top: 35px;
+        margin-top: 175px;
+        padding-bottom: 35px;
+        width: 1000px;
+        background: rgb(8, 3, 17);
+        border: 1px solid #FFFFFF;
+        box-shadow: 0px 3.05753px 3.05753px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5.73288px);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 20px;
+    }
+
+    .back2{
+        height: 700px !important;
+    }
+
+    .title{
+        @include var.title
+    }
+
+    .part2{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p{
+                @include var.text;
+                margin-left: 10px;
+            }
+            input{
+                width: 730.21px;
+                height: 80px;
+                background: rgba(255, 255, 255, 0.075);
+                border: 1px solid #FFFFFF;
+                border-radius: 20px;
+                @include var.text;
+            }
+
+        }
+
+    }
+    .button{
+        width: 730.21px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.075);
+        border: 1px solid #FFFFFF;
+        border-radius: 20px;
+        @include var.text;
+    }
+.login{
+    width: 262px;
+height: 70px;
+background: rgba(255, 255, 255, 0.25);
+border: 1px solid #FFFFFF;
+border-radius: 20px;
+}
+.iconl{
+    height: 50px;
+    width: 50px;
+    opacity: 0.5;
+}
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1600px) {
+    .back{
+        height: 120vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back_login{
+        position: absolute;
+        margin-top: -6.25vw;
+        width: 100vw;
+        height: 70vw;
+        z-index: 1;
+        object-fit: cover;
+        // z-index: 1000;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 2.18vw;
+        padding-top: 2.18vw;
+        margin-top: 5vw;
+        z-index: 2;
+        padding-bottom: 2.18vw;
+        width: 62.5vw;
+        background: rgb(8, 3, 17);
+        border: 0.0625vw solid #FFFFFF;
+        box-shadow: 0px 0.18vw 0.18vw rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0.375vw);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 1.25vw
+    }
+
+    .title{
+        @include var.title
+    }
+
+    .part2{
+        display: flex;
+        flex-direction: column;
+        gap: 1.56vw;
+        align-items: center;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3125vw;
+
+            p{
+                @include var.text;
+                margin-left: 0.625vw;
+            }
+            input{
+                width: 45.625vw;
+                height: 5vw;
+                background: rgba(255, 255, 255, 0.075);
+                border: 0.0625vw solid #FFFFFF;
+                border-radius: 1.25vw;
+                @include var.text;
+            }
+        }
+    }
+    .button{
+        width: 45.625vw;
+        height: 5vw;
+        background: rgba(255, 255, 255, 0.075);
+        border: 0.0625vw solid #FFFFFF;
+        border-radius: 1.25vw;
+        @include var.text;
+    }
+.login{
+    width: 16.375vw;
+height: 4.375vw;
+background: rgba(255, 255, 255, 0.25);
+border: 0.0625vw solid #FFFFFF;
+border-radius: 1.25vw;
+}
+.iconl{
+    height: 3.125vw;
+    width: 3.125vw;
+    opacity: 0.5;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1022px) {
+    .back{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back_login{
+        position: absolute;
+        // margin-top: -6.25vw;
+        width: 100vw;
+        height: 100vw;
+        z-index: 1;
+        object-fit: cover;
+        // z-index: 1000;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 35px;
+        padding-top: 38px;
+        margin-top: 150px;
+        z-index: 2;
+        padding-bottom: 2.18vw;
+        width: 670px;
+        background: rgb(8, 3, 17);
+        border: 0.0625vw solid #FFFFFF;
+        box-shadow: 0px 0.18vw 0.18vw rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0.375vw);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 20px;
+    }
+
+    .title{
+        @include var.title_tablet
+    }
+
+    .part2{
+        display: flex;
+        flex-direction: column;
+        gap: 1.56vw;
+        align-items: center;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            p{
+                @include var.text_tablet;
+                margin-left: 0.625vw;
+            }
+            input{
+                width: 529px;
+                height: 70px;
+                background: rgba(255, 255, 255, 0.075);
+                border: 0.0625vw solid #FFFFFF;
+                border-radius: 20px;
+                @include var.text_tablet;
+            }
+        }
+    }
+    .button{
+        width: 529px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.075);
+        border: 0.0625vw solid #FFFFFF;
+        border-radius: 20px;
+        @include var.text_tablet;
+    }
+.login{
+    width: 262px;
+height: 60px;
+background: rgba(255, 255, 255, 0.25);
+border: 0.0625vw solid #FFFFFF;
+border-radius: 20px;
+margin-bottom: 15px;
+}
+.iconl{
+    height: 40px;
+    width: 40px;
+    opacity: 0.5;
+}
+  }
+
+@media screen and (max-width: 767px) {
+    .back{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back_login{
+        position: absolute;
+        // margin-top: -6.25vw;
+        width: 100vw;
+        height: 100vw;
+        z-index: 1;
+        object-fit: cover;
+        // z-index: 1000;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        gap: 17.5px;
+        padding-top: 38px;
+        margin-top: 150px;
+        z-index: 2;
+        padding-bottom: 2.18vw;
+        width: 89.3vw;
+        background: rgb(8, 3, 17);
+        border: 0.0625vw solid #FFFFFF;
+        box-shadow: 0px 0.18vw 0.18vw rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0.375vw);
+        /* Note: backdrop-filter has minimal browser support */
+        
+        border-radius: 20px;
+    }
+
+    .title{
+        @include var.title_phone
+    }
+
+    .part2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 7.5px;
+
+            p{
+                @include var.text_phone;
+                margin-left: 0.625vw;
+            }
+            input{
+                width: 74.5vw;
+                height: 35px;
+                background: rgba(255, 255, 255, 0.075);
+                border: 0.0625vw solid #FFFFFF;
+                border-radius: 2.3vw;
+                @include var.text_phone;
+            }
+        }
+    }
+    .button{
+        width: 74.5vw;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.075);
+        border: 0.0625vw solid #FFFFFF;
+        border-radius: 2.3vw;
+        @include var.text_phone;
+    }
+.login{
+    width: 42.5vw;
+height: 40px;
+background: rgba(255, 255, 255, 0.25);
+border: 0.0625vw solid #FFFFFF;
+border-radius: 2.3vw;
+margin-bottom: 15px;
+}
+.iconl{
+    height: 25px;
+    width: 25px;
+    opacity: 0.5;
+}
+  }
+
+  .button:hover{
+    background: rgba(255, 255, 255, 0.75) !important ;
+}

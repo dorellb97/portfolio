@@ -1,0 +1,121 @@
+$dark-color: #07081F;
+$back-color: #F2F2FF;
+$back-card: #F6F9FF;
+
+@mixin navbar_text{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 45px;
+color: $dark-color
+}
+
+$font-light: #FFFFFF;
+$title_size: 64px;
+$title_color: #FAFAFA;
+$font-size: 16px;
+$text-font: 24px;
+
+
+@mixin navbar_text_phone {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    color: $font-light;
+    }
+    @mixin navbar_text_phone2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 5vw;
+        line-height: 6vw;
+        display: flex;
+        align-items: center;
+        color: #07081F;
+        }
+    @mixin title {
+        font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: $title_size;
+    line-height: 94px;
+    color: $title_color;
+    }
+
+    @mixin title_tablet {
+        font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 70px;
+    color: $title_color;
+    }
+
+    @mixin title_phone {
+        font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: $title_color;
+    }
+
+@mixin text{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: $text-font;
+line-height: 37px;
+color: $font-light;
+}
+
+@mixin text_tablet{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 25px;
+color: $font-light;
+}
+
+@mixin text_phone{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 17px;
+color: $font-light;
+}
+
+@mixin custom_text {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: $text-font;
+line-height: 37px;
+display: flex;
+color: #fafafab3;
+}
+
+@mixin custom_text_tablet {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 25px;
+display: flex;
+color: #fafafab3;
+}
+
+@mixin custom_text_phone {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+color: #fafafab3;
+}
