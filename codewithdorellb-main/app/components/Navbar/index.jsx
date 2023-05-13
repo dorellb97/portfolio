@@ -87,9 +87,9 @@ export default function Navbar() {
         }
           <div className={styles.box_contacts}>
             <div className={styles.first_child}>
-            <a href='https://t.me/webXwiz'><div><Image src="/instagram.svg" alt='.' width={40} height={40}/></div></a>
-            <a href='https://www.instagram.com/web.x.wiz/'><div><Image src="/tg.svg" alt='.' width={40} height={40}/></div></a>
-            <a href='https://wa.me/380938036791'><div><Image src="/youtube.svg" alt='.' width={40} height={40}/></div></a>
+            <a href='https://www.instagram.com/codewith_dorell.b/'><div><Image src="/instagram.svg" alt='.' width={40} height={40}/></div></a>
+            <a href='https://t.me/codewith_dorellb'><div><Image src="/tg.svg" alt='.' width={40} height={40}/></div></a>
+            <a href='https://www.youtube.com/@codewith_Dorell.B'><div><Image src="/youtube.svg" alt='.' width={40} height={40}/></div></a>
             </div>
           </div>
          </div>
