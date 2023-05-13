@@ -43,7 +43,7 @@ export default function Navbar() {
         </div>
         <div className={styles.center}>
         <Link href='/#projects' style={{textDecoration: "none"}}><p>{t('header:projects')}</p></Link>
-        <Link href='https://www.buymeacoffee.com' style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
+        <Link href='https://bmc.link/codewithdorellb' style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
         {auth &&
         <div>
         <Link href="/admin/createpost" style={{textDecoration: "none"}}><p>Create post</p></Link>
@@ -53,8 +53,8 @@ export default function Navbar() {
         </div>
         <div className={styles.last}>
         <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/instagram.svg" width={35} height={35}/></a>
-        <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
-        <a href='https://t.me/webxwiz' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
+        <a href='https://www.youtube.com/@codewith_Dorell.B' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
+        <a href='https://t.me/codewith_dorellb' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
         </div>
         <div className={styles.menu}>
         {isOpen ?
