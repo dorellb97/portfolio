@@ -27,8 +27,8 @@ export default function Part3() {
        
         </div>
             <div className={styles.back2}>
-            {/* {(loading ? [...Array(3)] :data?.getAllPosts).map((obj, key) =>  */}
-            {(loading ? [...Array(3)] :fakeArray).map((obj, key) => 
+             {(loading ? [...Array(3)] :data?.getAllPosts).map((obj, key) =>  
+            // {(loading ? [...Array(3)] :fakeArray).map((obj, key) => 
              loading ? 
              (<PostsView     key={key} 
                  myKey={key} isLoading={true} />) :
