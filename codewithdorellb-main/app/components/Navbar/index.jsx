@@ -78,7 +78,7 @@ export default function Navbar() {
       </div>
          <div className={auth ? `${styles.info_links_admin} ${styles.info_links}` : styles.info_links} >
          <Link prefetch={false} href="/#projects"><div>{t('header:projects')}</div></Link>
-          <Link prefetch={false} href="/#works"><div>{t('header:support')}</div></Link>
+          <Link prefetch={false} href="https://bmc.link/codewithdorellb"><div>{t('header:support')}</div></Link>
           {auth &&
         <div style={{display: "flex", flexDirection: "column", gap: "1vw", marginTop: "2vw", marginBottom: "5vw"}}>
         <Link href="/admin/createpost" style={{textDecoration: "none"}}><p>Create post</p></Link>
