@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
     <div className={styles.back}>
         <div className={styles.logo}>
-        <Link href='/' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/><p>Codewith_Dorell.B</p></Link>
+        <Link href='/' style={{textDecoration: "none"}}><Image src="/logo.svg" width={35} height={35}/><p>Codewith_Dorell.B</p></Link>
         </div>
         <div className={styles.center}>
         <Link href='/#projects' style={{textDecoration: "none"}}><p>{t('header:projects')}</p></Link>
