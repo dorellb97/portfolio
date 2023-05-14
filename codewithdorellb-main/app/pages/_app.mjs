@@ -14,6 +14,7 @@ import Router from 'next/router'
 import store from '../redux/store.jsx';
 import { ApolloCache } from '@apollo/client/core';
 import Loader from '../components/Loader/index.jsx';
+import Script from 'next/script';
 const createApolloClient = (cache = {}) =>
   new ApolloClient({
     ssrMode: typeof window === "undefined",

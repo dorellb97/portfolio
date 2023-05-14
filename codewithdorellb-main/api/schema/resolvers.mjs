@@ -92,7 +92,6 @@ const resolvers = {
                 {text},
                 { new: true }
             );
-            console.log(linkchange)
             return "Done"
         }
     }

@@ -17,7 +17,6 @@ const PostsView = ({
     treshold: 0.5,
     triggerOnce:true
   })
-console.log(videoLink);
 const { auth } = useSelector((state) => state.auth);   
 const [deletePost, {loading}] = useMutation(DELETE_POST, {
   onCompleted: (data) => {
@@ -28,7 +27,6 @@ const [deletePost, {loading}] = useMutation(DELETE_POST, {
   },
   variables: {deletePostId: id}
 })
-console.log(sourceCode)
   return (
     <div ref={ref} className={styles.back}>
             {inView ?

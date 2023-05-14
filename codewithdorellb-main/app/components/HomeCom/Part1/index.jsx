@@ -24,10 +24,6 @@ export default function Part () {
     variables: {text: url}
   });
 
-  // useEffect(() => {
-  //   setLastVideo(data)
-  // }, [data]);
-  console.log(data?.getLastVideo);
   const {auth} = useSelector((state) => state.auth);
 
 
