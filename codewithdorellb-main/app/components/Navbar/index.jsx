@@ -43,6 +43,7 @@ export default function Navbar() {
         </div>
         <div className={styles.center}>
         <Link href='/#projects' style={{textDecoration: "none"}}><p>{t('header:projects')}</p></Link>
+        <Link href='/#about_us' style={{textDecoration: "none"}}><p>{t('header:about_us')}</p></Link>
         <Link href='https://bmc.link/codewithdorellb' style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
         {auth &&
         <div>
