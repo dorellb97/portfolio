@@ -45,11 +45,15 @@ export default function Part3() {
 
             ),
             )}
-        </div>
-        <div className={styles.box}>
+            <div className={styles.box}>
              <a href={`https://codewithdorellb.com/it#projects`}><button> Projects </button></a> 
             
           </div>
+        </div>
+        {/* <div className={styles.box}>
+             <a href={`https://codewithdorellb.com/it#projects`}><button> Projects </button></a> 
+            
+          </div> */}
     </div>
   )
 }
