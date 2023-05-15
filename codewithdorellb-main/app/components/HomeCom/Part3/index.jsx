@@ -46,7 +46,7 @@ export default function Part3() {
             ),
             )}
             <div className={styles.box}>
-             <a href={`https://codewithdorellb.com/it#projects`}><button> Projects </button></a> 
+             <a href={`https://codewithdorellb.com/`}><button> Back to Header </button></a> 
             
           </div>
         </div>
