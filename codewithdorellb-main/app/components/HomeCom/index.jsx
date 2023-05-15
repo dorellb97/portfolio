@@ -5,7 +5,7 @@ import Part3 from './Part3'
 
 export default function HomeCom() {
   return (
-    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100vw", gap: "100px" , overflow:"auto"}}>
+    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100vw", gap: "100px" , overflow-y:"scroll"}}>
     <Part1 />
     <Part3 />
     <Part2 />
