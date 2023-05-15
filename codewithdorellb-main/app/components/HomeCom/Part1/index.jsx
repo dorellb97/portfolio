@@ -49,8 +49,8 @@ export default function Part () {
         </div>
         <div className={styles.right}>
          {auth&& <button className={styles.change} onClick={handleClick}>Change✒️</button>} 
-         {data?.getLastVideo ?   <iframe width="560" height="315" src={`https://www.youtube.com/embed/${data?.getLastVideo}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className={styles.video}></iframe> : <div className={styles.video}></div>
-        } 
+         {/* {data?.getLastVideo ?   <iframe width="560" height="315" src={`https://www.youtube.com/embed/${data?.getLastVideo}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className={styles.video}></iframe> : <div className={styles.video}></div>
+        }  */}<Image src="/dorel.jfif" width={120} height={120}/>
         </div>
     </div>
   )
