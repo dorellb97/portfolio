@@ -11,6 +11,17 @@ query Query {
 }
 `;
 
+export const GET_ONE_POST = gql`
+query GetPost($getPostId: ID) {
+  getPost(id: $getPostId) {
+    id
+    title
+    sourceCode
+    videoLink
+    updatedAt
+  }
+}
+`
 
 export const DELETE_POST = gql`
 mutation Mutation($deletePostId: ID) {

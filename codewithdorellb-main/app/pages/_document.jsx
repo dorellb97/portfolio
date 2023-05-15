@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
         <Head>
         <meta name="keywords" content="web, development, site, website, web-creation,website creation, modern website, SEO, вебсайты, разработка, веб" />
-        <meta name="author" content="Pavel Vasilec" />
+        <meta name="author" content="Dorel Boencius" />
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
