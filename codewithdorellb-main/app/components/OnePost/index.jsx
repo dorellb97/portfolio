@@ -49,7 +49,7 @@ export default function OnePost({ queryId }) {
           <p className={styles.title}>{data?.getPost?.title}</p>
 
           <div className={styles.box}>
-             <a href={`https://www.youtube.com/watch?v=${data?.getPost?.videoLink}`}><button> VIDEO</button></a> 
+             <a href={`https://www.youtube.com/watch?v=${data?.getPost?.videoLink}`}><button> VIDEO HERE</button></a> 
             
           </div>
 
