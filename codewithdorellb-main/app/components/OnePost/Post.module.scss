@@ -164,7 +164,7 @@
     }
     @media screen and (min-width: 1440px) {
         .back{
-            width: 66px;
+            width: 1138px;
         }
         .markdown{
             width: 916px;
@@ -204,14 +204,14 @@ color: #F2F2FF;
     .preback{
         display: flex;
         justify-content: center;
-        width: 66vw;
+        width: 100vw;
     }
 
 
     .back{
         display: flex;
         flex-direction: column;
-        width: 66vw;
+        width: 79vw;
         padding-top: 50px;
         gap: 50px;
     }
@@ -382,14 +382,14 @@ color: #F2F2FF;
     .preback{
         display: flex;
         justify-content: center;
-        width: 60vw;
+        width: 100vw;
     }
 
 
     .back{
         display: flex;
         flex-direction: column;
-        width: 60vw;
+        width: 100vw;
         padding-top: 50px;
         gap: 20px;
     }
