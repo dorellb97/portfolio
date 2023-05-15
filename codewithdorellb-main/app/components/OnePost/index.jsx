@@ -47,6 +47,12 @@ export default function OnePost({ queryId }) {
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
+
+          <div className={styles.box}>
+             <a href={`https://www.youtube.com/watch?v=${videoLink}`}><button> VIDEO</button></a> 
+            
+          </div>
+
           <p
             className={styles.pretitle}
           >{data?.getPost?.pretitle}</p>
