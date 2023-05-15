@@ -41,9 +41,15 @@ export default function Part3() {
                 sourceCode={obj.sourceCode}
                 videoLink={obj.videoLink}
             />
+              
+
             ),
             )}
         </div>
+        <div className={styles.box}>
+             <a href={`https://codewithdorellb.com/it#projects`}><button> Projects </button></a> 
+            
+          </div>
     </div>
   )
 }
