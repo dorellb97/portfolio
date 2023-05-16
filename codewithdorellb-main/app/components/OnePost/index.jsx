@@ -53,7 +53,7 @@ export default function OnePost({ queryId }) {
             
           </div> */}
            <div className={styles.box}>
-             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button> YouTube Channel</button></a> 
+             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button> YouTube Channel <img>youtube.svg</img></button></a> 
             
           </div> 
 
