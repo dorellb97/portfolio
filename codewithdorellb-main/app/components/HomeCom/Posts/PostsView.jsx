@@ -11,7 +11,6 @@ const PostsView = ({
   id,
   title,
   videoLink,
-  imgLink,
   sourceCode,
 }) => {
   const { ref, inView } = useInView({
@@ -46,7 +45,7 @@ const [deletePost, {loading}] = useMutation(DELETE_POST, {
           </div>
           {/* <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoLink}`} title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className={styles.video} /> */}
 
-          <img src={`${imgLink}` } width="500" height="250"></img>
+          <img src={`${videoLink}` } width="500" height="250"></img>
     </div>
     </>)
      :

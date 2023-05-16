@@ -36,7 +36,7 @@ mutation CreatePost($post: PostInput) {
     title
     sourceCode
     videoLink
-    imgLink
+    
   }
 }
 `

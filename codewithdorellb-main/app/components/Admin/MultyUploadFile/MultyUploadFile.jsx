@@ -21,7 +21,7 @@ export default function MultyUploadFile() {
   const [value, setValue] = useState("xxx");
   // const [sourceCode, setSourceCode] = useState('')
   const [videoLink, setVideoLink] = useState('')
-  const [imgLink, setImagLink] = useState('')
+
   const mdEditor = useRef(null);
 
   const Toast = Swal.mixin({
@@ -54,7 +54,7 @@ export default function MultyUploadFile() {
           title: `Congratulations, you’ve created a new post!`
         })
     } ,
-    variables: {post:{title,imgLink, sourceCode: value, videoLink}}
+    variables: {post:{title, sourceCode: value, videoLink}}
   });
   const { auth, loading } = useSelector((state) => state.auth);
 
@@ -93,10 +93,6 @@ export default function MultyUploadFile() {
       <div>
       <p>Explained video (link)</p>
       <input className={styles.inputer}  value={videoLink} onChange={(e) => setVideoLink(e.target.value)} />
-      </div>
-      <div>
-      <p>Image (link)</p>
-      <input className={styles.inputer}  value={imgLink} onChange={(e) => setImagLink(e.target.value)} />
       </div>
       <div>
       <p>Source code </p>
