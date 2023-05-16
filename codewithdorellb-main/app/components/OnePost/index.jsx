@@ -48,10 +48,14 @@ export default function OnePost({ queryId }) {
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
 
-          <div className={styles.box}>
+          {/* <div className={styles.box}>
              <a href={`https://www.youtube.com/watch?v=${data?.getPost?.videoLink}`}><button> VIDEO HERE</button></a> 
             
-          </div>
+          </div> */}
+           <div className={styles.box}>
+             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button> YouTube Channel</button></a> 
+            
+          </div> 
 
           <p
             className={styles.pretitle}
