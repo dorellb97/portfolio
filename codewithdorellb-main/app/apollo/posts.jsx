@@ -7,6 +7,7 @@ query Query {
     title
     sourceCode
     videoLink
+    imgLink
   }
 }
 `;
@@ -18,6 +19,7 @@ query GetPost($getPostId: ID) {
     title
     sourceCode
     videoLink
+    imgLink
     updatedAt
   }
 }
@@ -36,6 +38,7 @@ mutation CreatePost($post: PostInput) {
     title
     sourceCode
     videoLink
+    imgLink
   }
 }
 `
