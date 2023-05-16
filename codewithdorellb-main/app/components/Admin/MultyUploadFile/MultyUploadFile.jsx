@@ -54,7 +54,7 @@ export default function MultyUploadFile() {
           title: `Congratulations, you’ve created a new post!`
         })
     } ,
-    variables: {post:{title, sourceCode: value, videoLink,imgLink}}
+    variables: {post:{title,imgLink, sourceCode: value, videoLink}}
   });
   const { auth, loading } = useSelector((state) => state.auth);
 
