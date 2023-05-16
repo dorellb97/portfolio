@@ -4,7 +4,7 @@
         display: flex;
         flex-direction: row;
         width: 1440px;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 65px;
     }
@@ -81,10 +81,10 @@
         display: flex;
         flex-direction: row;
         width: 100vw;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 65px;
-        gap: 50px;
+        gap: 30px;
     }
     .change{
         position: absolute;
@@ -161,10 +161,10 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 65px;
-        gap: 40px;
+        gap: 20px;
     }
     .change{
         position: absolute;
@@ -237,10 +237,10 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 30px;
-        gap: 20px;
+        gap: 10px;
     }
     .change{
         position: absolute;
