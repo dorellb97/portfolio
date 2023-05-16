@@ -43,7 +43,7 @@ const [deletePost, {loading}] = useMutation(DELETE_POST, {
             <a href={`/projects/${id}`}><button>Source code</button></a>
           </div>
           </div>
-          <iframe width="560" height="315" src={`https://codeincomplete.com/articles/javascript-racer/racer.png`} title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className={styles.video} />
+          <img src="https://codeincomplete.com/articles/javascript-racer/racer.png"  width="auto" height="auto"></img>
     </div>
     </>)
      :
