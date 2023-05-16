@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className={styles.center}>
         <Link href='/#projects' style={{textDecoration: "none"}}><p>{t('header:projects')}</p></Link>
         <Link href='/#about-us' style={{textDecoration: "none"}}><p>{t('header:about_us')}</p></Link>
-        <Link href='https://www.buymeacoffee.com/codewithdorellb' style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
+        <Link href='https://www.buymeacoffee.com/codewithdorellb' target="_blank" style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
         {auth &&
         <div>
         <Link href="/admin/createpost" style={{textDecoration: "none"}}><p>Create post</p></Link>
