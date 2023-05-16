@@ -40,6 +40,7 @@ export default function Part3() {
                 title={obj.title}
                 sourceCode={obj.sourceCode}
                 videoLink={obj.videoLink}
+                imgLink={obj.imgLink}
             />
               
 
