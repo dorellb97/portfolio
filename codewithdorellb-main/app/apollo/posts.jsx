@@ -7,7 +7,6 @@ query Query {
     title
     sourceCode
     videoLink
-    imgLink
   }
 }
 `;
@@ -19,7 +18,6 @@ query GetPost($getPostId: ID) {
     title
     sourceCode
     videoLink
-    imgLink
     updatedAt
   }
 }
