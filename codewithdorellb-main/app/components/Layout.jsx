@@ -27,6 +27,10 @@ const Layout = ({ children }) => {
     
 <Navbar />
 {children}
+<div className={styles.box}>
+             <a href={`https://codewithdorellb.com/`}><button>HOME PAGE</button></a> 
+            
+          </div> 
 <Footer />
 </div>
 </>

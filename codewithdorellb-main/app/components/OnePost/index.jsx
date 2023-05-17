@@ -70,10 +70,8 @@ export default function OnePost({ queryId }) {
         </div>
 
       </div>
-      <div className={styles.box}>
-             <a href={`https://codewithdorellb.com/`}><button>HOME PAGE</button></a> 
-            
-          </div> 
+      
     </div>
+    
   );
 }
