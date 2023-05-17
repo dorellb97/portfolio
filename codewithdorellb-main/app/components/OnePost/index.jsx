@@ -67,11 +67,15 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
           />
+
         </div>
 
       </div>
-      
+      <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a>
     </div>
     
+              
+            
+          
   );
 }
