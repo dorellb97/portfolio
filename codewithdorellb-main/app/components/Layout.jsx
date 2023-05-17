@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import Head from 'next/head'
 import Navbar from "./Navbar";
+import styles from "./Post.module.scss";
 import { AuthContext } from "../hooks/AuthContext";
 import {useContext} from 'react'
 import { useDispatch } from "react-redux";
