@@ -1,7 +1,6 @@
 import Footer from "./Footer";
 import Head from 'next/head'
 import Navbar from "./Navbar";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { AuthContext } from "../hooks/AuthContext";
 import {useContext} from 'react'
 import { useDispatch } from "react-redux";
@@ -12,13 +11,7 @@ const montserrat = Montserrat({
     subsets: ["cyrillic", "latin"],
     display: "swap"
 })
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, ["header"]))
-      }
-    }
-  }
+
 
 const Layout = ({ children }) => {
     const dispatch = useDispatch()
