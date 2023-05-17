@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
     
 <Navbar />
 {children}
+<a href='https://codewithdorellb.com/' style={{textDecoration: "none"}}><Image src="https://cdn-icons-png.flaticon.com/512/3844/3844455.png" width={35} height={47}/></a>
 <Footer />
 </div>
 </>
