@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 export async function getStaticProps({ locale }) {
     return {
       props: {
-        ...(await serverSideTranslations(locale, ["home", "header"]))
+        ...(await serverSideTranslations(locale, ["header"]))
       }
     }
   }
