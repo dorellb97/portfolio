@@ -39,7 +39,7 @@ export default function Part3() {
         {/* <Posts /> */}
        
         </div>
-        <input type="search" placeholder="Search a Game" value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search}/>
+        <input type="search" placeholder="Search here..." value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search}/>
             <div className={styles.back2}>
              {(loading ? [...Array(3)] : filtered).map((obj, key) =>  
             // {(loading ? [...Array(3)] :fakeArray).map((obj, key) => 
