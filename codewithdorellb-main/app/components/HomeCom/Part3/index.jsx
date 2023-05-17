@@ -1,11 +1,18 @@
 import Image from 'next/image'
+import { useState } from 'react';
 import styles from './Part3.module.scss'
 import { useTranslation } from 'next-i18next';
 import PostsView from '../Posts/PostsView';
 import { useQuery } from '@apollo/client'
 import { GET_POSTS } from '../../../apollo/posts';
+import { useDebounce } from '@react-hooks-library/core'
+
 export default function Part3() {
   const {t} = useTranslation()
+  const [searchText, setSearchText] = useState("");
+  const debouncedSearchText = useDebounce(searchText, 500); // Debounce time of 500 milliseconds
+
+
   const {data, loading, error} = useQuery(GET_POSTS);
   const fakeArray = [
     {
@@ -15,6 +22,12 @@ export default function Part3() {
       "videoLink": "zzZbcrhmYdU"
     }
   ];
+
+  const filtered = data?.getAllPosts.filter(obj => {
+    return (
+      obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase()) 
+    );
+  });
   
   return (
     <div className={styles.back} id='projects'>
@@ -26,8 +39,9 @@ export default function Part3() {
         {/* <Posts /> */}
        
         </div>
+        <input type="search" value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search}/>
             <div className={styles.back2}>
-             {(loading ? [...Array(3)] :data?.getAllPosts).map((obj, key) =>  
+             {(loading ? [...Array(3)] : filtered).map((obj, key) =>  
             // {(loading ? [...Array(3)] :fakeArray).map((obj, key) => 
              loading ? 
              (<PostsView     key={key} 

@@ -1,3 +1,4 @@
+@use "../../../styles/various.module.scss" as var;
 
 @media screen and (min-width: 1440px) {
     .back{
@@ -7,7 +8,18 @@
         gap: 35px;
         min-height: 500px;
     }
-    
+    .search{
+        width: 100px;
+        @include var.text;
+        border-radius: 20px;
+        width: 400px;
+        background-color: white;
+        box-shadow: 4px 0px 4px hwb(238 3% 88% / 0.344);
+        border: none;
+        color: #07081F;
+        padding-left: 15px;
+        height: 60px;
+    }
     .head{
         display: flex;
         flex-direction: row;
@@ -74,7 +86,17 @@
         gap: 35px;
         min-height: 500px;
     }
-    
+    .search{
+        @include var.text;
+        border-radius: 20px;
+        width: 27.78vw;
+        background-color: white;
+        box-shadow: 4px 0px 4px hwb(238 3% 88% / 0.344);
+        border: none;
+        color: #07081F;
+        height: 60px;
+        padding-left: 15px;
+    }
     .head{
         display: flex;
         flex-direction: row;
@@ -118,7 +140,17 @@
         gap: 25px;
         min-height: 500px;
     }
-    
+    .search{
+        @include var.text_tablet;
+        border-radius: 20px;
+        width: 40.78vw;
+        background-color: white;
+        box-shadow: 4px 0px 4px hwb(238 3% 88% / 0.344);
+        border: none;
+        color: #07081F;
+        height: 60px;
+        padding-left: 15px;
+    }
     .head{
         display: flex;
         flex-direction: row;
@@ -185,7 +217,17 @@
         gap: 15px;
         min-height: 500px;
     }
-    
+    .search{
+        @include var.text_phone;
+        border-radius: 10px;
+        width: 70.78vw;
+        background-color: white;
+        box-shadow: 4px 0px 4px hwb(238 3% 88% / 0.344);
+        border: none;
+        color: #07081F;
+        height: 30px;
+        padding-left: 7.5px;
+    }
     .head{
         display: flex;
         flex-direction: row;
