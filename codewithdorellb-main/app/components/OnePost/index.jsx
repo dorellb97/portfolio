@@ -66,19 +66,11 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-/>
+            remarkPlugins={[remarkGfm]} 
+            
+              />
           
-            <CButton onClick={() => setVisible(!visible)}>Button</CButton>
-            <CCollapse visible={visible}>
-              <CCard >
-                <CCardBody>
-                remarkPlugins={[remarkGfm]}
-                </CCardBody>
-              </CCard>
-            </CCollapse>
-            {/* remarkPlugins={[remarkGfm]} */}
           
-
         </div>
 
       </div>
