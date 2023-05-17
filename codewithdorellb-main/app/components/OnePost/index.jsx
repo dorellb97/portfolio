@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+
 export default function OnePost({ queryId }) {
   console.log(queryId);
   const router = useRouter();
@@ -65,8 +66,18 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm]}
-          />
+/>
+          
+            <CButton onClick={() => setVisible(!visible)}>Button</CButton>
+            <CCollapse visible={visible}>
+              <CCard >
+                <CCardBody>
+                remarkPlugins={[remarkGfm]}
+                </CCardBody>
+              </CCard>
+            </CCollapse>
+            {/* remarkPlugins={[remarkGfm]} */}
+          
 
         </div>
 
