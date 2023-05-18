@@ -17,13 +17,19 @@ const CodeBlock = ({ value }) => {
 
   return (
     <div>
-      {value?.slice(0, linesToShow).map((line, index) => (
-        <p key={index}>{line}</p>
-      ))}
-      {value?.length > 10 && (
-        <button onClick={handleExpand}>
-          {expanded ? "Show Less" : "Show More"}
-        </button>
+      {value && value.length > 0 ? (
+        <>
+          {value.slice(0, linesToShow).map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+          {value.length > 10 && (
+            <button onClick={handleExpand}>
+              {expanded ? "Show Less" : "Show More"}
+            </button>
+          )}
+        </>
+      ) : (
+        <p>No source code available.</p>
       )}
     </div>
   );
