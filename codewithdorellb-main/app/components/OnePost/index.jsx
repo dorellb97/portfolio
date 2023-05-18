@@ -1,18 +1,42 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Post.module.scss";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+const CodeComponent = ({ language, value, children }) => {
+  const [isCodeVisible, setCodeVisibility] = useState(false);
+
+  const toggleCodeVisibility = () => {
+    setCodeVisibility((prevVisibility) => !prevVisibility);
+  };
+
+  return (
+    <div className={styles.codeContainer}>
+      <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>
+        {children}
+      </pre>
+      {isCodeVisible && (
+        <button onClick={() => navigator.clipboard.writeText(value)}>Copy code</button>
+      )}
+      <button onClick={toggleCodeVisibility}>
+        {isCodeVisible ? "Show less" : "Show more"}
+      </button>
+    </div>
+  );
+};
 
 export default function OnePost({ queryId }) {
+  console.log(queryId);
   const router = useRouter();
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
-
+  console.log(error);
   const [creationDate, setCreationDate] = useState("");
-  const [isCodeVisible, setIsCodeVisible] = useState(false);
 
   useEffect(() => {
     const monthNames = [
@@ -38,20 +62,6 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const toggleCodeVisibility = () => {
-    setIsCodeVisible((prevState) => !prevState);
-  };
-
-  const CodeComponent = ({ language, value }) => (
-    <div className={styles.codeContainer}>
-      <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>{value}</pre>
-      {isCodeVisible && (
-        <button onClick={() => navigator.clipboard.writeText(value)}>Copy code</button>
-      )}
-      <button onClick={toggleCodeVisibility}>{isCodeVisible ? "Show less" : "Show more"}</button>
-    </div>
-  );
-
   return (
     <div className={styles.preback}>
       <div className={styles.back}>
@@ -67,11 +77,11 @@ export default function OnePost({ queryId }) {
 
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
-
         <div className={styles.premark}>
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
+            remarkPlugins={[remarkGfm]}
             components={{
               code: CodeComponent,
             }}
