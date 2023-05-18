@@ -43,7 +43,7 @@ export default function Part () {
   }
 
   return (
-    <div className={styles.back}>
+    <div className={styles.back} id='home'>
       <div className={styles.left}>
         <p><span>{t('home:first_1')}</span>{t('home:first_2')}</p>
         </div>

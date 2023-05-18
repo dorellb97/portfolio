@@ -6,6 +6,7 @@ import PostsView from '../Posts/PostsView';
 import { useQuery } from '@apollo/client'
 import { GET_POSTS } from '../../../apollo/posts';
 import { useDebounce } from '@react-hooks-library/core'
+import Link from 'next/link';
 
 export default function Part3() {
   const {t} = useTranslation()
@@ -61,7 +62,7 @@ export default function Part3() {
             ),
             )}
             <div className={styles.box}>
-             <a href={`https://codewithdorellb.com/`}><button> Back to Header </button></a> 
+             <Link href="/#home"><button> Back to Header </button></Link> 
             
           </div>
         </div>

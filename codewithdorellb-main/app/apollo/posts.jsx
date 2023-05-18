@@ -52,3 +52,13 @@ mutation Mutation($text: String) {
   lastVideo(text: $text)
 }
 `
+export const LOADING10_POSTS = gql`
+query GetNextPosts($skipNumber: String) {
+  getNextPosts(skipNumber: $skipNumber) {
+    id
+    title
+    videoLink
+    updatedAt
+  }
+}
+`
