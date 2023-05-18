@@ -13,16 +13,18 @@ const CodeBlock = ({ value }) => {
     setExpanded(!expanded);
   };
 
-  const linesToShow = expanded ? value?.length : 10;
+  const lines = value ? value.split("\n") : [];
+
+  const linesToShow = expanded ? lines.length : 10;
 
   return (
     <div>
-      {value && value.length > 0 ? (
+      {lines && lines.length > 0 ? (
         <>
-          {value.slice(0, linesToShow).map((line, index) => (
+          {lines.slice(0, linesToShow).map((line, index) => (
             <p key={index}>{line}</p>
           ))}
-          {value.length > 10 && (
+          {lines.length > 10 && (
             <button onClick={handleExpand}>
               {expanded ? "Show Less" : "Show More"}
             </button>
