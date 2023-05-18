@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function OnePost({ queryId }) {
   console.log(queryId);
@@ -42,9 +41,13 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCodeCopy = () => {
-    // Handle code copy logic here
-    // You can show a success message or perform any other action
-    console.log("Code copied to clipboard!");
+    navigator.clipboard.writeText(data?.getPost?.sourceCode)
+      .then(() => {
+        console.log("Code copied to clipboard!");
+      })
+      .catch((error) => {
+        console.error("Failed to copy code to clipboard:", error);
+      });
   };
 
   return (
@@ -66,9 +69,7 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
           />
-          <CopyToClipboard text={data?.getPost?.sourceCode}>
-            <button onClick={handleCodeCopy}>Copy Code</button>
-          </CopyToClipboard>
+          <button onClick={handleCodeCopy}>Copy Code</button>
         </div>
       </div>
     </div>
