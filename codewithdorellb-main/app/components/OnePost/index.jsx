@@ -13,8 +13,9 @@ export default function OnePost({ queryId }) {
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
-  console.log(error)
+  console.log(error);
   const [creationDate, setCreationDate] = useState("");
+  const [expanded, setExpanded] = useState(false);
   const preRef = useRef(null);
 
   useEffect(() => {
@@ -49,6 +50,10 @@ export default function OnePost({ queryId }) {
     }
   };
 
+  const handleToggleExpand = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className={styles.preback}>
       <div className={styles.back}>
@@ -72,13 +77,16 @@ export default function OnePost({ queryId }) {
                 const preElement = useRef(null);
                 return (
                   <div className={styles.codeContainer}>
-                    <pre ref={preRef}>
+                    <pre ref={preRef} className={expanded ? styles.expanded : ""}>
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
                     </pre>
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
+                    </button>
+                    <button className={styles.expandButton} onClick={handleToggleExpand}>
+                      {expanded ? "Show Less" : "Show More"}
                     </button>
                   </div>
                 );
