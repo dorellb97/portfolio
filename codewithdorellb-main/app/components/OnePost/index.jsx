@@ -13,9 +13,9 @@ export default function OnePost({ queryId }) {
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
-  console.log(error)
+  console.log(error);
   const [creationDate, setCreationDate] = useState("");
-  const preRef = useRef(null);
+  const preRefs = useRef([]);
 
   useEffect(() => {
     const monthNames = [
@@ -41,8 +41,8 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCopyCode = () => {
-    const preElement = preRef.current;
+  const handleCopyCode = (index) => {
+    const preElement = preRefs.current[index];
     if (preElement) {
       const codeText = preElement.innerText;
       navigator.clipboard.writeText(codeText);
@@ -57,8 +57,10 @@ export default function OnePost({ queryId }) {
           <p className={styles.title}>{data?.getPost?.title}</p>
 
           <div className={styles.box}>
-            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
-          </div> 
+            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}>
+              <button>YouTube Channel</button>
+            </a>
+          </div>
 
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
@@ -69,15 +71,21 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => {
-                const preElement = useRef(null);
+                const preElementRef = useRef(null);
+                const index = preRefs.current.length;
+                preRefs.current.push(preElementRef);
+
                 return (
                   <div className={styles.codeContainer}>
-                    <pre ref={preRef}>
+                    <pre ref={preElementRef}>
                       {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { ref: preElement });
+                        return React.cloneElement(child, { ref: preElementRef });
                       })}
                     </pre>
-                    <button className={styles.copyButton} onClick={handleCopyCode}>
+                    <button
+                      className={styles.copyButton}
+                      onClick={() => handleCopyCode(index)}
+                    >
                       Copy
                     </button>
                   </div>
