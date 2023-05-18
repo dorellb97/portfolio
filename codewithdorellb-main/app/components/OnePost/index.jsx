@@ -42,6 +42,16 @@ export default function OnePost({ queryId }) {
     setIsCodeVisible((prevState) => !prevState);
   };
 
+  const CodeComponent = ({ language, value }) => (
+    <div className={styles.codeContainer}>
+      <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>{value}</pre>
+      {isCodeVisible && (
+        <button onClick={() => navigator.clipboard.writeText(value)}>Copy code</button>
+      )}
+      <button onClick={toggleCodeVisibility}>{isCodeVisible ? "Show less" : "Show more"}</button>
+    </div>
+  );
+
   return (
     <div className={styles.preback}>
       <div className={styles.back}>
@@ -62,22 +72,8 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            renderers={{
-              code: ({ language, value }) => (
-                <div className={styles.codeContainer}>
-                  <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>
-                    {value}
-                  </pre>
-                  {isCodeVisible && (
-                    <button onClick={() => navigator.clipboard.writeText(value)}>
-                      Copy code
-                    </button>
-                  )}
-                  <button onClick={toggleCodeVisibility}>
-                    {isCodeVisible ? "Show less" : "Show more"}
-                  </button>
-                </div>
-              ),
+            components={{
+              code: CodeComponent,
             }}
           />
         </div>
