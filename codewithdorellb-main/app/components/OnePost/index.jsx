@@ -37,6 +37,15 @@ const CodeBlock = ({ value }) => {
   );
 };
 
+const renderers = {
+  code: ({ language, value }) => {
+    if (language === "sourceCode") {
+      return <CodeBlock value={value} />;
+    }
+    return <pre>{value}</pre>;
+  },
+};
+
 export default function OnePost({ queryId }) {
   const router = useRouter();
   const { data, loading, error } = useQuery(GET_ONE_POST, {
@@ -87,9 +96,7 @@ export default function OnePost({ queryId }) {
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
-            components={{
-              code: CodeBlock,
-            }}
+            components={renderers}
           />
         </div>
       </div>
