@@ -13,7 +13,7 @@ export default function OnePost({ queryId }) {
   });
 
   const [creationDate, setCreationDate] = useState("");
-  const [expanded, setExpanded] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   useEffect(() => {
     const monthNames = [
@@ -39,15 +39,21 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleToggleExpand = () => {
-    setExpanded(!expanded);
+  const handleToggleCollapse = () => {
+    setCollapsed(!collapsed);
   };
 
-  const replacePreTag = (sourceCode) => {
-    return sourceCode?.replace(
-      /<pre>/g,
-      `<pre class="${expanded ? styles.expanded : ""}">`
-    );
+  const renderers = {
+    code: ({ language, value }) => {
+      if (language && value) {
+        return (
+          <pre className={collapsed ? styles.collapsed : ""}>
+            <code>{value}</code>
+          </pre>
+        );
+      }
+      return null;
+    },
   };
 
   return (
@@ -69,12 +75,12 @@ export default function OnePost({ queryId }) {
         <div className={styles.premark}>
           <ReactMarkdown
             className={styles.markdown}
-            children={replacePreTag(data?.getPost?.sourceCode)}
+            children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
-            allowDangerousHtml
+            renderers={renderers}
           />
-          <button className={styles.toggleButton} onClick={handleToggleExpand}>
-            {expanded ? "Collapse" : "Expand"}
+          <button className={styles.toggleButton} onClick={handleToggleCollapse}>
+            {collapsed ? "Expand" : "Collapse"}
           </button>
         </div>
       </div>
