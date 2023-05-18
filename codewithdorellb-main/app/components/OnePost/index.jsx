@@ -100,3 +100,5 @@ export default function OnePost({ queryId }) {
     </div>
   );
 }
+   
+
