@@ -43,6 +43,13 @@ export default function OnePost({ queryId }) {
     setExpanded(!expanded);
   };
 
+  const replacePreTag = (sourceCode) => {
+    return sourceCode.replace(
+      /<pre>/g,
+      `<pre class="${expanded ? styles.expanded : ""}">`
+    );
+  };
+
   return (
     <div className={styles.preback}>
       <div className={styles.back}>
@@ -61,9 +68,10 @@ export default function OnePost({ queryId }) {
 
         <div className={styles.premark}>
           <ReactMarkdown
-            className={`${styles.markdown} ${expanded ? styles.expanded : ""}`}
-            children={data?.getPost?.sourceCode}
+            className={styles.markdown}
+            children={replacePreTag(data?.getPost?.sourceCode)}
             remarkPlugins={[remarkGfm]}
+            allowDangerousHtml
           />
           <button className={styles.toggleButton} onClick={handleToggleExpand}>
             {expanded ? "Collapse" : "Expand"}
