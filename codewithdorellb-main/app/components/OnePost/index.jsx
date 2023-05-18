@@ -51,14 +51,12 @@ export default function OnePost({ queryId }) {
     code: ({ language, value }) => {
       if (language && value) {
         return (
-          <pre className={styles.codeBlock}>
-            <code
-              onClick={() => handleCopyCode(value)}
-              style={{ cursor: "pointer" }}
-            >
-              {value}
-            </code>
-          </pre>
+          <div className={styles.codeBlock}>
+            <pre>
+              <code>{value}</code>
+              <button onClick={() => handleCopyCode(value)}>Copy</button>
+            </pre>
+          </div>
         );
       }
       return null;
