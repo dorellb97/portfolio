@@ -42,9 +42,9 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCopyCode = () => {
-    const preElement = preRef.current;
-    if (preElement) {
-      const codeText = preElement.innerText;
+    const codeElement = preRef.current.querySelector("code");
+    if (codeElement) {
+      const codeText = codeElement.innerText;
       navigator.clipboard.writeText(codeText);
     }
   };
