@@ -7,6 +7,39 @@ import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { Collapse } from 'remark-collapse';
+
+const CodeBlock = ({ node, inline, className, children, ...props }) => {
+  const match = /language-(\w+)/.exec(className || '');
+  const [expanded, setExpanded] = useState(false);
+
+  const handleExpand = () => {
+    setExpanded(true);
+  };
+
+  return !inline && match ? (
+    <Collapse expanded={expanded} onClick={handleExpand}>
+      <SyntaxHighlighter
+        style={vscDarkPlus}
+        language={match[1]}
+        PreTag="div"
+        children={String(children).replace(/\n$/, '')}
+        {...props}
+      />
+    </Collapse>
+  ) : (
+    <code className={className} {...props}>
+      {children}
+    </code>
+  );
+};
+
+
+
+
+
+
+
 
 export default function OnePost({ queryId }) {
   console.log(queryId);
@@ -66,10 +99,16 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm]} 
-            
-              />
-          
+            remarkPlugins={[remarkGfm, Collapse]} 
+            components={{
+              code: CodeBlock,
+            }}
+            transformLinkUri={(uri) => (uri.startsWith('http') ? uri : `${process.env.BASE_URL}${uri}`)}
+            skipHtml={true}
+          >
+            {data?.getPost?.sourceCode}
+              
+              </ReactMarkdown>
           
         </div>
 
