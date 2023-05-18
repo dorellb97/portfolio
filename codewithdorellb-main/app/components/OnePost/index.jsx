@@ -69,13 +69,13 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => (
-                <pre ref={preRef}>
-                  {children}
-                </pre>
+                <div className={styles.codeContainer}>
+                  <pre ref={preRef}>{children}</pre>
+                  <button className={styles.copyButton} onClick={handleCopyCode}>Copy</button>
+                </div>
               ),
             }}
           />
-          <button onClick={handleCopyCode}>Copy Code</button>
         </div>
       </div>
     </div>
