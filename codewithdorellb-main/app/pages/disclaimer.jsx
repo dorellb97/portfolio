@@ -1,4 +1,13 @@
 import styles from "../components/OnePost/Post.module.scss";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["home", "header"]))
+      }
+    }
+  }
 export default function Disclaimer() {
   return (
     <div className={styles.preback}>

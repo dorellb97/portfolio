@@ -43,7 +43,9 @@ export default function Navbar() {
         </div>
         <div className={styles.center}>
         <Link href='/#projects' style={{textDecoration: "none"}}><p>{t('header:projects')}</p></Link>
-        <Link href='/#about-us' style={{textDecoration: "none"}}><p>{t('header:about_us')}</p></Link>
+        <Link href='/about-us' style={{textDecoration: "none"}}><p>{t('header:about_us')}</p></Link>
+        <Link href='/disclaimer' style={{textDecoration: "none"}}><p>{t('header:disclaimer')}</p></Link>
+        <Link href='/privacy-policy' style={{textDecoration: "none"}}><p>{t('header:privacy_policy')}</p></Link>
         <Link href='https://www.buymeacoffee.com/codewithdorellb' target="_blank" style={{textDecoration: "none"}}><p>{t('header:support')}</p></Link>
         {auth &&
         <div>
@@ -79,7 +81,9 @@ export default function Navbar() {
       </div>
          <div className={auth ? `${styles.info_links_admin} ${styles.info_links}` : styles.info_links} >
          <Link prefetch={false} href="/#projects"><div>{t('header:projects')}</div></Link>
-         <Link prefetch={false} href="/#about-us"><div>{t('header:about_us')}</div></Link>
+         <Link prefetch={false} href="/about-us"><div>{t('header:about_us')}</div></Link>
+         <Link prefetch={false} href="/disclaimer"><div>{t('header:disclaimer')}</div></Link>
+         <Link prefetch={false} href="/privacy-policy"><div>{t('header:privacy_policy')}</div></Link>
           <Link prefetch={false} href="https://www.buymeacoffee.com/codewithdorellb"><div>{t('header:support')}</div></Link>
           {auth &&
         <div style={{display: "flex", flexDirection: "column", gap: "1vw", marginTop: "2vw", marginBottom: "5vw"}}>
