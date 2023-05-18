@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/router";
+import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
+import React, { useState, useRef } from "react";
+import styles from "./Post.module.scss";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { GET_ONE_POST } from "../../apollo/posts";
-import styles from "./Post.module.scss";
 
 export default function OnePost({ queryId }) {
   const router = useRouter();
@@ -68,11 +69,11 @@ export default function OnePost({ queryId }) {
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
+
           <div className={styles.box}>
-            <a href="https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA">
-              <button>YouTube Channel</button>
-            </a>
-          </div>
+            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
+          </div> 
+
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
         <div className={styles.premark}>
@@ -97,17 +98,21 @@ export default function OnePost({ queryId }) {
                 }, []);
 
                 return (
-                  <div className={styles.codeContainer}>
-                    <pre ref={preElement} className={`${styles.codeContent} ${expanded ? styles.expanded : ""}`}>
+                  <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
+                    <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": lineLimit }}>
                       {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { ref: preRef });
+                        return React.cloneElement(child, { ref: preElement });
                       })}
-                      <button className={styles.showMoreButton} onClick={handleShowMoreOrLess}>
-                        {lineLimit === defaultLineLimit ? "Show More" : "Show Less"}
-                      </button>
                     </pre>
                     <button className={styles.copyButton} onClick={handleCopyCode}>
-                      Copy
+                      Copy Code
+                    </button>
+                    <button
+                      ref={showMoreButtonRef}
+                      className={styles.showMoreButton}
+                      onClick={handleShowMoreOrLess}
+                    >
+                      {lineLimit === defaultLineLimit ? "Show More" : "Show Less"}
                     </button>
                   </div>
                 );
