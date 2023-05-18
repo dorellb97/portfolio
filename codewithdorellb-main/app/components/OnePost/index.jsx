@@ -76,8 +76,8 @@ export default function OnePost({ queryId }) {
               pre: ({ children }) => {
                 const preElement = useRef(null);
                 return (
-                  <div className={styles.codeContainer}>
-                    <pre ref={preRef} className={expanded ? styles.expanded : ""}>
+                  <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
+                    <pre ref={preRef} className={styles.codeContent}>
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
