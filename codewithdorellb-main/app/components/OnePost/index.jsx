@@ -103,6 +103,13 @@ export default function OnePost({ queryId }) {
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
+                       <button
+                      ref={showMoreButtonRef}
+                      className={styles.showMoreButton}
+                      onClick={handleShowMoreOrLess}
+                    >
+                      {lineLimit === defaultLineLimit ? "Show More" : "Show Less"}
+                    </button>
                     </pre>
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
