@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const CodeComponent = ({ language, value, children }) => {
+const CodeComponent = ({ language, value }) => {
   const [isCodeVisible, setCodeVisibility] = useState(false);
 
   const toggleCodeVisibility = () => {
@@ -17,7 +17,7 @@ const CodeComponent = ({ language, value, children }) => {
   return (
     <div className={styles.codeContainer}>
       <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>
-        {children}
+        {value}
       </pre>
       {isCodeVisible && (
         <button onClick={() => navigator.clipboard.writeText(value)}>Copy code</button>
