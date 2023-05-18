@@ -41,7 +41,7 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCodeCopy = () => {
-    const codeText = codeBlockRef.current.textContent;
+    const codeText = code
     navigator.clipboard
       .writeText(codeText)
       .then(() => {
@@ -72,7 +72,7 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => (
-                <pre ref={codeBlockRef}>
+                <pre ref={code}>
                   <button onClick={handleCodeCopy}>Copy Code</button>
                   {children}
                 </pre>
