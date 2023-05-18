@@ -16,6 +16,7 @@ export default function OnePost({ queryId }) {
   console.log(error);
   const [creationDate, setCreationDate] = useState("");
   const [expanded, setExpanded] = useState(false);
+  const [lineCount, setLineCount] = useState(0);
   const preRef = useRef(null);
   const maxLines = 5; // Set the maximum number of lines to show initially
 
@@ -41,6 +42,16 @@ export default function OnePost({ queryId }) {
     const monthName = monthNames[monthNumber];
     const day = date.getDate().toString().padStart(2, "0");
     setCreationDate(`${monthName} ${day}, ${year}`);
+  }, [data]);
+
+  useEffect(() => {
+    const preElement = preRef.current;
+    if (preElement) {
+      const lineHeight = parseInt(getComputedStyle(preElement).lineHeight);
+      const contentHeight = preElement.offsetHeight;
+      const computedLineCount = Math.ceil(contentHeight / lineHeight);
+      setLineCount(computedLineCount);
+    }
   }, [data]);
 
   const handleCopyCode = () => {
@@ -93,17 +104,14 @@ export default function OnePost({ queryId }) {
                         return React.cloneElement(child, { ref: preElement });
                       })}
                     </pre>
-                    {!expanded && (
-                      <button
-                        className={styles.expandButton}
-                        onClick={handleToggleExpand}
-                      >
-                        Show More
-                      </button>
-                    )}
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
                     </button>
+                    {lineCount > maxLines && (
+                      <button className={styles.expandButton} onClick={handleToggleExpand}>
+                        {expanded ? "Show Less" : "Show More"}
+                      </button>
+                    )}
                   </div>
                 );
               },
