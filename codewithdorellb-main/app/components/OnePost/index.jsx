@@ -105,7 +105,7 @@ export default function OnePost({ queryId }) {
                       })}
                     </pre>
                     <button className={styles.copyButton} onClick={handleCopyCode}>
-                      Copy Code
+                      Copy
                     </button>
                     <button
                       ref={showMoreButtonRef}
@@ -117,6 +117,7 @@ export default function OnePost({ queryId }) {
                   </div>
                 );
               },
+
             }}
           />
         </div>
