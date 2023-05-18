@@ -6,6 +6,15 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [ "header"]))
+    }
+  }
+}
 
 export default function OnePost({ queryId }) {
   const router = useRouter();
