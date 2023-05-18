@@ -1,21 +1,23 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Post.module.scss";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function OnePost({ queryId }) {
-  console.log(queryId);
+  const router = useRouter();
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
-  console.log(error);
+
   const [creationDate, setCreationDate] = useState("");
   const [expanded, setExpanded] = useState(false);
-  const [lineCount, setLineCount] = useState(0);
   const preRef = useRef(null);
-  const maxLines = 5; // Set the maximum number of lines to show initially
+  const defaultLineLimit = 5;
+  const [lineLimit, setLineLimit] = useState(defaultLineLimit);
 
   useEffect(() => {
     const monthNames = [
@@ -41,16 +43,6 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  useEffect(() => {
-    const preElement = preRef.current;
-    if (preElement) {
-      const lineHeight = parseInt(getComputedStyle(preElement).lineHeight);
-      const contentHeight = preElement.offsetHeight;
-      const computedLineCount = Math.ceil(contentHeight / lineHeight);
-      setLineCount(computedLineCount);
-    }
-  }, [data]);
-
   const handleCopyCode = () => {
     const preElement = preRef.current;
     if (preElement) {
@@ -61,6 +53,14 @@ export default function OnePost({ queryId }) {
 
   const handleToggleExpand = () => {
     setExpanded(!expanded);
+  };
+
+  const handleShowMoreOrLess = () => {
+    if (lineLimit === defaultLineLimit) {
+      setLineLimit(null); // Show all lines
+    } else {
+      setLineLimit(defaultLineLimit); // Show default number of lines
+    }
   };
 
   return (
@@ -84,19 +84,22 @@ export default function OnePost({ queryId }) {
             components={{
               pre: ({ children }) => {
                 const preElement = useRef(null);
+                const showMoreButtonRef = useRef(null);
+
+                useEffect(() => {
+                  if (preElement.current && showMoreButtonRef.current) {
+                    const preHeight = preElement.current.offsetHeight;
+                    const lineHeight = parseInt(getComputedStyle(preElement.current).lineHeight);
+                    const maxLines = Math.floor(preHeight / lineHeight);
+                    if (maxLines > defaultLineLimit) {
+                      showMoreButtonRef.current.style.display = "block";
+                    }
+                  }
+                }, []);
+
                 return (
-                  <div className={styles.codeContainer}>
-                    <pre
-                      ref={preRef}
-                      className={`${styles.codeContent} ${
-                        expanded ? styles.expanded : ""
-                      }`}
-                      style={
-                        !expanded && lineCount > maxLines
-                          ? { maxHeight: `${maxLines * 1.2}em`, overflow: "hidden" }
-                          : {}
-                      }
-                    >
+                  <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
+                    <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": lineLimit }}>
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
@@ -104,16 +107,13 @@ export default function OnePost({ queryId }) {
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
                     </button>
-                    {!expanded && lineCount > maxLines && (
-                      <button className={styles.expandButton} onClick={handleToggleExpand}>
-                        Show More
-                      </button>
-                    )}
-                    {expanded && (
-                      <button className={styles.expandButton} onClick={handleToggleExpand}>
-                        Show Less
-                      </button>
-                    )}
+                    <button
+                      ref={showMoreButtonRef}
+                      className={styles.showMoreButton}
+                      onClick={handleShowMoreOrLess}
+                    >
+                      {lineLimit === defaultLineLimit ? "Show More" : "Show Less"}
+                    </button>
                   </div>
                 );
               },
