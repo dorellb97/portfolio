@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as ReactRouter, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client/react/context/ApolloProvider';
 import { createUploadLink } from 'apollo-upload-client';
 import { appWithTranslation } from 'next-i18next';
 import { Provider } from 'react-redux';
-import Router from 'next/router';
+import NextRouter from 'next/router';
 import store from '../redux/store.jsx';
 import { ApolloCache } from '@apollo/client/core';
 import Loader from '../components/Loader/index.jsx';
@@ -24,11 +24,10 @@ const createApolloClient = (cache = {}) =>
     link: createUploadLink({ uri: process.env.API_URI, credentials: 'include' }),
   });
 export const apolloClient = createApolloClient(ApolloCache);
- 
 
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const router = NextRouter;
 
   useEffect(() => {
     router.events.on('routeChangeStart', () => {
@@ -72,14 +71,14 @@ const App = ({ Component, pageProps }) => {
                     }}
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
                   />
-                  <Router>
+                  <ReactRouter>
                     <Switch>
                       {/* Other routes for your application */}
                       <Route path="/disclaimer" component={Disclaimer} />
                       <Route path="/" exact component={Component} />
                       {/* Add more routes as needed */}
                     </Switch>
-                  </Router>
+                  </ReactRouter>
                 </>
               </main>
             </Layout>
