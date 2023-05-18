@@ -96,7 +96,7 @@ export default function OnePost({ queryId }) {
                       }`}
                       style={
                         !expanded
-                          ? { maxHeight: `${maxLines * 1.2}em`, overflow: "hidden" }
+                          ? { maxHeight: `${maxLines * 2.2}em`, overflow: "hidden" }
                           : {}
                       }
                     >
