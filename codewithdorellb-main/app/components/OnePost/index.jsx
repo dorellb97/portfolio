@@ -41,17 +41,16 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCodeCopy = () => {
-  const codeText = codeBlockRef.current.textContent;
-  navigator.clipboard
-    .writeText(codeText)
-    .then(() => {
-      console.log("Code copied to clipboard!");
-    })
-    .catch((error) => {
-      console.error("Failed to copy code to clipboard:", error);
-    });
-};
-  
+    const codeText = codeBlockRef.current.textContent;
+    navigator.clipboard
+      .writeText(codeText)
+      .then(() => {
+        console.log("Code copied to clipboard!");
+      })
+      .catch((error) => {
+        console.error("Failed to copy code to clipboard:", error);
+      });
+  };
 
   return (
     <div className={styles.preback}>
@@ -73,7 +72,7 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => (
-                <pre ref={codeBlockRef.current}>
+                <pre ref={codeBlockRef}>
                   <button onClick={handleCodeCopy}>Copy Code</button>
                   {children}
                 </pre>
