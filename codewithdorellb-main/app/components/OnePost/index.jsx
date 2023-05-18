@@ -15,7 +15,7 @@ export default function OnePost({ queryId }) {
   });
   console.log(error)
   const [creationDate, setCreationDate] = useState("");
-  const codeRef = useRef(null);
+  const preRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -42,9 +42,9 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCopyCode = () => {
-    const codeElement = codeRef.current;
-    if (codeElement) {
-      const codeText = codeElement.textContent;
+    const preElement = preRef.current;
+    if (preElement) {
+      const codeText = preElement.innerText;
       navigator.clipboard.writeText(codeText);
     }
   };
@@ -67,7 +67,13 @@ export default function OnePost({ queryId }) {
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
-            ref={codeRef}
+            components={{
+              pre: ({ children }) => (
+                <pre ref={preRef}>
+                  {children}
+                </pre>
+              ),
+            }}
           />
           <button onClick={handleCopyCode}>Copy Code</button>
         </div>
