@@ -14,7 +14,7 @@ export default function OnePost({ queryId }) {
   });
   console.log(error);
   const [creationDate, setCreationDate] = useState("");
-  const markdownRef = useRef(null);
+  const codeBlockRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -40,28 +40,16 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  useEffect(() => {
-    if (markdownRef.current) {
-      const codeBlock = markdownRef.current.querySelector("pre code");
-      const codeText = codeBlock.textContent;
-
-      const handleCodeCopy = () => {
-        navigator.clipboard.writeText(codeText)
-          .then(() => {
-            console.log("Code copied to clipboard!");
-          })
-          .catch((error) => {
-            console.error("Failed to copy code to clipboard:", error);
-          });
-      };
-
-      markdownRef.current.addEventListener("click", handleCodeCopy);
-
-      return () => {
-        markdownRef.current.removeEventListener("click", handleCodeCopy);
-      };
-    }
-  }, [data]);
+  const handleCodeCopy = () => {
+    const codeText = codeBlockRef.current.textContent;
+    navigator.clipboard.writeText(codeText)
+      .then(() => {
+        console.log("Code copied to clipboard!");
+      })
+      .catch((error) => {
+        console.error("Failed to copy code to clipboard:", error);
+      });
+  };
 
   return (
     <div className={styles.preback}>
@@ -78,10 +66,17 @@ export default function OnePost({ queryId }) {
         </div>
         <div className={styles.premark}>
           <ReactMarkdown
-            ref={markdownRef}
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
+            components={{
+              pre: ({ children }) => (
+                <pre ref={codeBlockRef}>
+                  <button onClick={handleCodeCopy}>Copy Code</button>
+                  {children}
+                </pre>
+              ),
+            }}
           />
         </div>
       </div>
