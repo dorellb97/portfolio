@@ -14,7 +14,7 @@ export default function OnePost({ queryId }) {
   });
   console.log(error);
   const [creationDate, setCreationDate] = useState("");
-  const preRefs = useRef([]);
+  const divRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -40,10 +40,13 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCopyCode = (index) => {
-    const preElement = preRefs.current[index];
-    if (preElement) {
-      const codeText = preElement.textContent;
+  const handleCopyCode = () => {
+    const preElements = divRef.current.querySelectorAll("pre");
+    if (preElements.length > 0) {
+      let codeText = "";
+      preElements.forEach((preElement) => {
+        codeText += preElement.textContent + "\n";
+      });
 
       // Create a temporary textarea element to copy the code
       const textarea = document.createElement("textarea");
@@ -76,27 +79,26 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
             components={{
-              pre: ({ children }) => {
-                const preElementRef = useRef(null);
-                const index = preRefs.current.length;
-                preRefs.current.push(preElementRef);
+              div: ({ children, ...props }) => {
+                const divElementRef = useRef(null);
+                divRef.current = divElementRef;
 
+                return <div ref={divElementRef} {...props}>{children}</div>;
+              },
+              pre: ({ children }) => {
                 return (
                   <div className={styles.codeContainer}>
-                    <pre ref={preElementRef}>
+                    <pre>
                       <code>{children}</code>
                     </pre>
-                    <button
-                      className={styles.copyButton}
-                      onClick={() => handleCopyCode(index)}
-                    >
-                      Copy
-                    </button>
                   </div>
                 );
               },
             }}
           />
+          <button className={styles.copyButton} onClick={handleCopyCode}>
+            Copy All Code
+          </button>
         </div>
       </div>
     </div>
