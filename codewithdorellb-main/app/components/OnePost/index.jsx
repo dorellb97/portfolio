@@ -43,7 +43,7 @@ export default function OnePost({ queryId }) {
   const handleCopyCode = (index) => {
     const preElement = preRefs.current[index];
     if (preElement) {
-      const codeText = preElement.innerText;
+      const codeText = preElement.textContent;
 
       // Create a temporary textarea element to copy the code
       const textarea = document.createElement("textarea");
