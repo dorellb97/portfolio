@@ -17,6 +17,10 @@ import Loader from '../components/Loader/index.jsx';
 import Script from 'next/script';
 
 
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Disclaimer from './Disclaimer';
+
 const createApolloClient = (cache = {}) =>
   new ApolloClient({
     ssrMode: typeof window === "undefined",
