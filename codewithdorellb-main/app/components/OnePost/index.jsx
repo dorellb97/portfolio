@@ -44,7 +44,7 @@ export default function OnePost({ queryId }) {
   };
 
   const replacePreTag = (sourceCode) => {
-    return sourceCode.replace(
+    return sourceCode?.replace(
       /<pre>/g,
       `<pre class="${expanded ? styles.expanded : ""}">`
     );
