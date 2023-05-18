@@ -130,6 +130,8 @@
             color: #00ffd5;
             font-size: 14px;
             line-height: 1.5;
+            box-sizing: inherit;
+            
      
             white-space: pre-wrap;
           }
@@ -384,6 +386,7 @@ color: #F2F2FF;
         flex-direction: column;
         flex-wrap: wrap;
         white-space: pre-wrap;
+        box-sizing: inherit;
       }
       
           table {
@@ -606,6 +609,7 @@ color: #F2F2FF;
         flex-direction: column;
         flex-wrap: wrap;
         white-space: pre-wrap;
+        box-sizing: inherit;
       }
       
           table {
