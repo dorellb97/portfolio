@@ -17,6 +17,7 @@ export default function OnePost({ queryId }) {
   const [creationDate, setCreationDate] = useState("");
   const [expanded, setExpanded] = useState(false);
   const preRef = useRef(null);
+  const maxLines = 5; // Set the maximum number of lines to show initially
 
   useEffect(() => {
     const monthNames = [
@@ -76,17 +77,32 @@ export default function OnePost({ queryId }) {
               pre: ({ children }) => {
                 const preElement = useRef(null);
                 return (
-                  <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
-                    <pre ref={preRef} className={styles.codeContent}>
+                  <div className={styles.codeContainer}>
+                    <pre
+                      ref={preRef}
+                      className={`${styles.codeContent} ${
+                        expanded ? styles.expanded : ""
+                      }`}
+                      style={
+                        !expanded
+                          ? { maxHeight: `${maxLines * 1.2}em`, overflow: "hidden" }
+                          : {}
+                      }
+                    >
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
                     </pre>
+                    {!expanded && (
+                      <button
+                        className={styles.expandButton}
+                        onClick={handleToggleExpand}
+                      >
+                        Show More
+                      </button>
+                    )}
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
-                    </button>
-                    <button className={styles.expandButton} onClick={handleToggleExpand}>
-                      {expanded ? "Show Less" : "Show More"}
                     </button>
                   </div>
                 );
@@ -98,5 +114,3 @@ export default function OnePost({ queryId }) {
     </div>
   );
 }
-
-
