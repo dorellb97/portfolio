@@ -577,7 +577,7 @@ color: #F2F2FF;
     overflow-wrap: break-word;
     position: relative;
     line-height: var(--line-limit); /* This line sets the line height based on the line limit */
-    max-height: calc(var(--line-limit) * 1.2em); /* This line sets the maximum height based on the line limit */
+    max-height: calc(var(--line-limit) * 15.1em); /* This line sets the maximum height based on the line limit */
     overflow: hidden;
   }
   
