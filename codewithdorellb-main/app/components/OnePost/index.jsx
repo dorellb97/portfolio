@@ -1,8 +1,7 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Post.module.scss";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -78,9 +77,7 @@ export default function OnePost({ queryId }) {
                 return (
                   <div className={styles.codeContainer}>
                     <pre ref={preElementRef}>
-                      {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { ref: preElementRef });
-                      })}
+                      <code>{children}</code>
                     </pre>
                     <button
                       className={styles.copyButton}
