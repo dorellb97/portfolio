@@ -1,15 +1,12 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Post.module.scss";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function OnePost({ queryId }) {
   console.log(queryId);
-  const router = useRouter();
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
@@ -95,8 +92,8 @@ export default function OnePost({ queryId }) {
                         expanded ? styles.expanded : ""
                       }`}
                       style={
-                        !expanded
-                          ? { maxHeight: `${maxLines * 2.2}em`, overflow: "hidden" }
+                        !expanded && lineCount > maxLines
+                          ? { maxHeight: `${maxLines * 1.2}em`, overflow: "hidden" }
                           : {}
                       }
                     >
@@ -107,9 +104,14 @@ export default function OnePost({ queryId }) {
                     <button className={styles.copyButton} onClick={handleCopyCode}>
                       Copy
                     </button>
-                    {lineCount > maxLines && (
+                    {!expanded && lineCount > maxLines && (
                       <button className={styles.expandButton} onClick={handleToggleExpand}>
-                        {expanded ? "Show Less" : "Show More"}
+                        Show More
+                      </button>
+                    )}
+                    {expanded && (
+                      <button className={styles.expandButton} onClick={handleToggleExpand}>
+                        Show Less
                       </button>
                     )}
                   </div>
