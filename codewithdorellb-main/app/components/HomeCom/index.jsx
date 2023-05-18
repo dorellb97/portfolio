@@ -10,7 +10,7 @@ export default function HomeCom() {
     <Part1 />
     <Part3 />
     {/* <TestComponent /> */}
-    <Part2 />
+    {/* <Part2 /> */}
     </div>
   )
 }
