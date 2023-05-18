@@ -38,9 +38,13 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCopyCode = (code) => {
-    console.log(code);
-    // Copy the code to the console or perform any desired actions
+  const handleCopyCode = async (code) => {
+    try {
+      await navigator.clipboard.writeText(code);
+      console.log("Code copied to clipboard:", code);
+    } catch (error) {
+      console.error("Failed to copy code to clipboard:", error);
+    }
   };
 
   const renderers = {
@@ -48,7 +52,12 @@ export default function OnePost({ queryId }) {
       if (language && value) {
         return (
           <pre className={styles.codeBlock}>
-            <code onClick={() => handleCopyCode(value)}>{value}</code>
+            <code
+              onClick={() => handleCopyCode(value)}
+              style={{ cursor: "pointer" }}
+            >
+              {value}
+            </code>
           </pre>
         );
       }
