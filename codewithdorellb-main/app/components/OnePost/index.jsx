@@ -44,11 +44,8 @@ export default function OnePost({ queryId }) {
   const handleCopyCode = () => {
     const preElement = preRef.current;
     if (preElement) {
-      const codeElement = preElement.querySelector("code");
-      if (codeElement) {
-        const codeText = codeElement.innerText;
-        navigator.clipboard.writeText(codeText);
-      }
+      const codeText = preElement.innerText;
+      navigator.clipboard.writeText(codeText);
     }
   };
 
@@ -71,12 +68,21 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
             components={{
-              pre: ({ children }) => (
-                <div className={styles.codeContainer}>
-                  <pre ref={preRef}>{children}</pre>
-                  <button className={styles.copyButton} onClick={handleCopyCode}>Copy</button>
-                </div>
-              ),
+              pre: ({ children }) => {
+                const preElement = useRef(null);
+                return (
+                  <div className={styles.codeContainer}>
+                    <pre ref={preRef}>
+                      {React.Children.map(children, (child) => {
+                        return React.cloneElement(child, { ref: preElement });
+                      })}
+                    </pre>
+                    <button className={styles.copyButton} onClick={handleCopyCode}>
+                      Copy
+                    </button>
+                  </div>
+                );
+              },
             }}
           />
         </div>
