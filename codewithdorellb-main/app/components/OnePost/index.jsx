@@ -39,10 +39,11 @@ export default function OnePost({ queryId }) {
     const day = date.getDate().toString().padStart(2, "0");
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
-
+  
   const handleCodeCopy = () => {
-    const codeText = codeBlockRef.current.textContent;
-    navigator.clipboard.writeText(codeText)
+    const codeText = codeBlockRef.current.innerText;
+    navigator.clipboard
+      .writeText(codeText)
       .then(() => {
         console.log("Code copied to clipboard!");
       })
@@ -50,6 +51,7 @@ export default function OnePost({ queryId }) {
         console.error("Failed to copy code to clipboard:", error);
       });
   };
+  
 
   return (
     <div className={styles.preback}>
