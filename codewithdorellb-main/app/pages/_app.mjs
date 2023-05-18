@@ -24,6 +24,7 @@ const createApolloClient = (cache = {}) =>
     link: createUploadLink({ uri: process.env.API_URI, credentials: 'include' }),
   });
 export const apolloClient = createApolloClient(ApolloCache);
+ 
 
 const App = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(false);
