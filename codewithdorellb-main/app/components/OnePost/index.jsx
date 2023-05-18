@@ -16,7 +16,7 @@ export default function OnePost({ queryId }) {
   const [creationDate, setCreationDate] = useState("");
   const [expanded, setExpanded] = useState(false);
   const preRef = useRef(null);
-  const defaultLineLimit = 5;
+  const defaultLineLimit = 3;
   const [lineLimit, setLineLimit] = useState(defaultLineLimit);
 
   useEffect(() => {
