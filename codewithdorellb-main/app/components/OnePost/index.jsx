@@ -19,9 +19,6 @@ const CodeComponent = ({ language, value }) => {
       <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>
         {value}
       </pre>
-      {isCodeVisible && (
-        <button onClick={() => navigator.clipboard.writeText(value)}>Copy code</button>
-      )}
       <button onClick={toggleCodeVisibility}>
         {isCodeVisible ? "Show less" : "Show more"}
       </button>
