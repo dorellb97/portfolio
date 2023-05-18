@@ -1,6 +1,6 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Post.module.scss";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -15,6 +15,7 @@ export default function OnePost({ queryId }) {
   });
   console.log(error);
   const [creationDate, setCreationDate] = useState("");
+  const markdownRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -41,7 +42,10 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCodeCopy = () => {
-    navigator.clipboard.writeText(data?.getPost?.sourceCode)
+    const codeBlock = markdownRef.current.querySelector("pre code");
+    const codeText = codeBlock.textContent;
+
+    navigator.clipboard.writeText(codeText)
       .then(() => {
         console.log("Code copied to clipboard!");
       })
@@ -65,6 +69,7 @@ export default function OnePost({ queryId }) {
         </div>
         <div className={styles.premark}>
           <ReactMarkdown
+            ref={markdownRef}
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
