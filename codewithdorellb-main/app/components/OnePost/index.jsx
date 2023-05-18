@@ -3,44 +3,41 @@ import { useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import Collapse from "react-collapsible";
 import remarkGfm from "remark-gfm";
 import styles from "./Post.module.scss";
 
-const CodeBlock = ({ value }) => {
+const CodeBlock = ({ language, value }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const handleExpand = () => {
+  const handleToggle = () => {
     setExpanded(!expanded);
   };
 
-  const lines = value ? value.split("\n") : [];
-
-  const linesToShow = expanded ? lines.length : 10;
-
   return (
-    <div>
-      {lines && lines.length > 0 ? (
-        <>
-          {lines.slice(0, linesToShow).map((line, index) => (
-            <p key={index}>{line}</p>
-          ))}
-          {lines.length > 10 && (
-            <button onClick={handleExpand}>
-              {expanded ? "Show Less" : "Show More"}
-            </button>
-          )}
-        </>
-      ) : (
-        <p>No source code available.</p>
+    <Collapse trigger={language} open={expanded}>
+      <SyntaxHighlighter
+        language={language}
+        style={darcula}
+        showLineNumbers={!expanded}
+      >
+        {value}
+      </SyntaxHighlighter>
+      {!expanded && (
+        <div className={styles.expandButton} onClick={handleToggle}>
+          Show More
+        </div>
       )}
-    </div>
+    </Collapse>
   );
 };
 
 const renderers = {
   code: ({ language, value }) => {
-    if (language === "sourceCode") {
-      return <CodeBlock value={value} />;
+    if (language && value) {
+      return <CodeBlock language={language} value={value} />;
     }
     return <pre>{value}</pre>;
   },
