@@ -1,8 +1,7 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Post.module.scss";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -41,18 +40,28 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCodeCopy = () => {
-    const codeBlock = markdownRef.current.querySelector("pre code");
-    const codeText = codeBlock.textContent;
+  useEffect(() => {
+    if (markdownRef.current) {
+      const codeBlock = markdownRef.current.querySelector("pre code");
+      const codeText = codeBlock.textContent;
 
-    navigator.clipboard.writeText(codeText)
-      .then(() => {
-        console.log("Code copied to clipboard!");
-      })
-      .catch((error) => {
-        console.error("Failed to copy code to clipboard:", error);
-      });
-  };
+      const handleCodeCopy = () => {
+        navigator.clipboard.writeText(codeText)
+          .then(() => {
+            console.log("Code copied to clipboard!");
+          })
+          .catch((error) => {
+            console.error("Failed to copy code to clipboard:", error);
+          });
+      };
+
+      markdownRef.current.addEventListener("click", handleCodeCopy);
+
+      return () => {
+        markdownRef.current.removeEventListener("click", handleCodeCopy);
+      };
+    }
+  }, [data]);
 
   return (
     <div className={styles.preback}>
@@ -74,7 +83,6 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
           />
-          <button onClick={handleCodeCopy}>Copy Code</button>
         </div>
       </div>
     </div>
