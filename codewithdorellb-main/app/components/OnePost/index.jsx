@@ -44,11 +44,8 @@ export default function OnePost({ queryId }) {
   const handleCopyCode = () => {
     const preElement = preRef.current;
     if (preElement) {
-      const codeElement = preElement.querySelector("code");
-      if (codeElement) {
-        const codeText = codeElement.innerText;
-        navigator.clipboard.writeText(codeText);
-      }
+      const codeText = preElement.children[0].innerText;
+      navigator.clipboard.writeText(codeText);
     }
   };
 
