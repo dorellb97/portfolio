@@ -1,6 +1,6 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Post.module.scss";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -15,6 +15,7 @@ export default function OnePost({ queryId }) {
   });
   console.log(error)
   const [creationDate, setCreationDate] = useState("");
+  const codeRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -34,12 +35,19 @@ export default function OnePost({ queryId }) {
 
     const date = new Date(parseInt(data?.getPost?.updatedAt));
     const year = date.getFullYear();
-    // const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const monthNumber = date.getMonth();
     const monthName = monthNames[monthNumber];
     const day = date.getDate().toString().padStart(2, "0");
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
+
+  const handleCopyCode = () => {
+    const codeElement = codeRef.current;
+    if (codeElement) {
+      const codeText = codeElement.textContent;
+      navigator.clipboard.writeText(codeText);
+    }
+  };
 
   return (
     <div className={styles.preback}>
@@ -48,36 +56,22 @@ export default function OnePost({ queryId }) {
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
 
-          {/* <div className={styles.box}>
-             <a href={`https://www.youtube.com/watch?v=${data?.getPost?.videoLink}`}><button> VIDEO HERE</button></a> 
-            
-          </div> */}
-           <div className={styles.box}>
-             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
-            
+          <div className={styles.box}>
+            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
           </div> 
 
-          <p
-            className={styles.pretitle}
-          >{data?.getPost?.pretitle}</p>
+          <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
         <div className={styles.premark}>
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm]} 
-            
-              />
-          
-          
+            remarkPlugins={[remarkGfm]}
+            ref={codeRef}
+          />
+          <button onClick={handleCopyCode}>Copy Code</button>
         </div>
-
       </div>
-      
     </div>
-    
-              
-            
-          
   );
 }
