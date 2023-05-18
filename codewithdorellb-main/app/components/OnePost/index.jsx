@@ -5,6 +5,7 @@ import styles from "./Post.module.scss";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Collapse } from "react-collapse";
 
 export default function OnePost({ queryId }) {
   const router = useRouter();
@@ -47,9 +48,11 @@ export default function OnePost({ queryId }) {
     code: ({ language, value }) => {
       if (language && value) {
         return (
-          <pre className={collapsed ? styles.collapsed : ""}>
-            <code>{value}</code>
-          </pre>
+          <Collapse isOpened={!collapsed}>
+            <pre className={styles.codeBlock}>
+              <code>{value}</code>
+            </pre>
+          </Collapse>
         );
       }
       return null;
