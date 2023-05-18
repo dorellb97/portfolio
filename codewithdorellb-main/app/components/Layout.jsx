@@ -6,12 +6,22 @@ import {useContext} from 'react'
 import { useDispatch } from "react-redux";
 import { addUsertoLocal } from "../redux/slices/auth";
 import { Montserrat } from "next/font/google";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 const montserrat = Montserrat({
     weight: ["100", "200", "300", "400", "500","600", "700", "800", "900"],
     subsets: ["cyrillic", "latin"],
     display: "swap"
 })
 
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["home", "header"]))
+      }
+    }
+  }
 
 const Layout = ({ children }) => {
     const dispatch = useDispatch()
