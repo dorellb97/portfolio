@@ -1,7 +1,8 @@
 import { GET_ONE_POST } from "../../apollo/posts";
 import { useQuery } from "@apollo/client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Post.module.scss";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -12,9 +13,9 @@ export default function OnePost({ queryId }) {
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
   });
-  console.log(error);
+  console.log(error)
   const [creationDate, setCreationDate] = useState("");
-  const divRef = useRef(null);
+  const preRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -41,20 +42,10 @@ export default function OnePost({ queryId }) {
   }, [data]);
 
   const handleCopyCode = () => {
-    const preElements = divRef.current.querySelectorAll("pre");
-    if (preElements.length > 0) {
-      let codeText = "";
-      preElements.forEach((preElement) => {
-        codeText += preElement.textContent + "\n";
-      });
-
-      // Create a temporary textarea element to copy the code
-      const textarea = document.createElement("textarea");
-      textarea.value = codeText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
+    const preElement = preRef.current;
+    if (preElement) {
+      const codeText = preElement.innerText;
+      navigator.clipboard.writeText(codeText);
     }
   };
 
@@ -66,10 +57,8 @@ export default function OnePost({ queryId }) {
           <p className={styles.title}>{data?.getPost?.title}</p>
 
           <div className={styles.box}>
-            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}>
-              <button>YouTube Channel</button>
-            </a>
-          </div>
+            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
+          </div> 
 
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
@@ -79,26 +68,23 @@ export default function OnePost({ queryId }) {
             children={data?.getPost?.sourceCode}
             remarkPlugins={[remarkGfm]}
             components={{
-              div: ({ children, ...props }) => {
-                const divElementRef = useRef(null);
-                divRef.current = divElementRef;
-
-                return <div ref={divElementRef} {...props}>{children}</div>;
-              },
               pre: ({ children }) => {
+                const preElement = useRef(null);
                 return (
                   <div className={styles.codeContainer}>
-                    <pre>
-                      <code>{children}</code>
+                    <pre ref={preRef}>
+                      {React.Children.map(children, (child) => {
+                        return React.cloneElement(child, { ref: preElement });
+                      })}
                     </pre>
+                    <button className={styles.copyButton} onClick={handleCopyCode}>
+                      Copy
+                    </button>
                   </div>
                 );
               },
             }}
           />
-          <button className={styles.copyButton} onClick={handleCopyCode}>
-            Copy All Code
-          </button>
         </div>
       </div>
     </div>
