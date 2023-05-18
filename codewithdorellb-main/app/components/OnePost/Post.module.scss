@@ -571,10 +571,14 @@ color: #F2F2FF;
   }
   
   .codeContent {
+    /* Add your styles for the code content here */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    position: relative;
+    line-height: var(--line-limit); /* This line sets the line height based on the line limit */
+    max-height: calc(var(--line-limit) * 1.2em); /* This line sets the maximum height based on the line limit */
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-     /* Adjust the number of lines shown */
   }
   
   .expanded .codeContent {
