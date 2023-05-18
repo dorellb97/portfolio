@@ -4,33 +4,28 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Collapse } from 'remark-collapse';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styles from "./Post.module.scss";
 
-const CodeBlock = ({ node, inline, className, children, ...props }) => {
-  const match = /language-(\w+)/.exec(className || '');
+const CodeBlock = ({ value }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleExpand = () => {
-    setExpanded(true);
+    setExpanded(!expanded);
   };
 
-  return !inline && match ? (
-    <Collapse expanded={expanded} onClick={handleExpand}>
-      <SyntaxHighlighter
-        style={vscDarkPlus}
-        language={match[1]}
-        PreTag="div"
-        children={String(children).replace(/\n$/, '')}
-        {...props}
-      />
-    </Collapse>
-  ) : (
-    <code className={className} {...props}>
-      {children}
-    </code>
+  const linesToShow = expanded ? value.length : 10;
+
+  return (
+    <div>
+      {value.slice(0, linesToShow).map((line, index) => (
+        <p key={index}>{line}</p>
+      ))}
+      {value.length > 10 && (
+        <button onClick={handleExpand}>
+          {expanded ? "Show Less" : "Show More"}
+        </button>
+      )}
+    </div>
   );
 };
 
@@ -83,7 +78,7 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm, Collapse]}
+            remarkPlugins={[remarkGfm]}
             components={{
               code: CodeBlock,
             }}
