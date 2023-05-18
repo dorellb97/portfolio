@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./Post.module.scss";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 export default function OnePost({ queryId }) {
   const router = useRouter();
@@ -13,6 +12,7 @@ export default function OnePost({ queryId }) {
   });
 
   const [creationDate, setCreationDate] = useState("");
+  const [isCodeVisible, setIsCodeVisible] = useState(false);
 
   useEffect(() => {
     const monthNames = [
@@ -38,29 +38,8 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCopyCode = async (code) => {
-    try {
-      await navigator.clipboard.writeText(code);
-      console.log("Code copied to clipboard:", code);
-    } catch (error) {
-      console.error("Failed to copy code to clipboard:", error);
-    }
-  };
-
-  const renderers = {
-    code: ({ language, value }) => {
-      if (language && value) {
-        return (
-          <div className={styles.codeBlock}>
-            <pre>
-              <code>{value}</code>
-              <button onClick={() => handleCopyCode(value)}>Copy</button>
-            </pre>
-          </div>
-        );
-      }
-      return null;
-    },
+  const toggleCodeVisibility = () => {
+    setIsCodeVisible((prevState) => !prevState);
   };
 
   return (
@@ -83,8 +62,23 @@ export default function OnePost({ queryId }) {
           <ReactMarkdown
             className={styles.markdown}
             children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm]}
-            renderers={renderers}
+            renderers={{
+              code: ({ language, value }) => (
+                <div className={styles.codeContainer}>
+                  <pre className={isCodeVisible ? styles.expandedCode : styles.collapsedCode}>
+                    {value}
+                  </pre>
+                  {isCodeVisible && (
+                    <button onClick={() => navigator.clipboard.writeText(value)}>
+                      Copy code
+                    </button>
+                  )}
+                  <button onClick={toggleCodeVisibility}>
+                    {isCodeVisible ? "Show less" : "Show more"}
+                  </button>
+                </div>
+              ),
+            }}
           />
         </div>
       </div>
