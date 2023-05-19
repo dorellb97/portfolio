@@ -24,6 +24,7 @@ export default function Part2() {
 
       <img src={`dorel.jpg` } width="450" height="300"></img>
         </div>
+        
     </div>
     </div>
   )
