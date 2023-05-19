@@ -40,16 +40,16 @@ export default function Part3() {
       </div>
 
 
-      {/* <div className={styles.search} id='category'>
+       <div className={styles.search} id='category'>
       <label  for="projects">Choose a category</label>
       <select name="projects" id="cars">
         {filtered && filtered.map(obj => (
           <option value={obj.title} key={obj.id}>{obj.title}</option>
         ))}
       </select>
-      </div> */}
+      </div> 
 
-      
+
       <input type="search" placeholder="Search here..." value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search} />
 
       <div className={styles.back2}>
