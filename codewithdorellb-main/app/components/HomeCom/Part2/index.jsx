@@ -10,6 +10,7 @@ export default function Part2() {
             <li>{t('home:facts_text_2')}</li>
             <li>{t('home:facts_text_3')}</li>
             <li>{t('home:facts_text_4')}</li>
+            <li>{t('home:facts_text_5')}</li>
         </div>
     </div>
   )
