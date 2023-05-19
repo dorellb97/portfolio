@@ -1,7 +1,7 @@
 import React from 'react'
 import Part2 from '../components/HomeCom/Part2'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import styles from '../components/HomeCom/Part2.module.scss'
+import styles from "../components/OnePost/Post.module.scss";
 
 export async function getStaticProps({ locale }) {
     return {
