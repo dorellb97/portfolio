@@ -21,6 +21,8 @@ export default function Part2() {
 
 <h2>Join us today and unlock the doors to a world of endless coding possibilities. Let your coding odyssey begin at CodeWithDorellB.com!
       </h2>
+
+      <img src={`dorel.jpg` } width="450" height="300"></img>
         </div>
     </div>
     </div>
