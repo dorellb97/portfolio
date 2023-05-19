@@ -31,7 +31,9 @@ export default function Aboutus() {
       </h2>
       </div>
       <img src={`dorel.jpg` } width="450" height="300"></img>
-        
+         
+
+         
     </div>
     </div>
   )
