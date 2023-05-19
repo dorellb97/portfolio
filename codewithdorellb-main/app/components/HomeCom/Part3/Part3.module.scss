@@ -86,7 +86,27 @@
         gap: 35px;
         min-height: 500px;
     }
-    .search{
+
+    .search {
+        @include var.text;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 400px;
+        background-color: white;
+        box-shadow: 4px 0px 4px hwb(238 3% 88% / 0.344);
+        border: none;
+        color: #07081F;
+        height: 60px;
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+
+
+
+    .search1{
         @include var.text;
         border-radius: 20px;
         width: 27.78vw;
