@@ -38,7 +38,7 @@ export default function Part3() {
         <Image src="/arrow.svg" width={41} height={114} className={styles.arrow} />
         {/* <Posts /> */}
       </div>
-      <div className={styles.back} id='category'>
+      <div className={styles.search} id='category'>
       <label  for="projects">Choose a category</label>
       <select name="projects" id="cars">
         {filtered && filtered.map(obj => (
