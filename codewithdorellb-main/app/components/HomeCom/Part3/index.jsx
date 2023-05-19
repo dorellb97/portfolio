@@ -40,6 +40,13 @@ export default function Part3() {
         {/* <Posts /> */}
        
         </div>
+
+        <select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select>
         <input type="search" placeholder="Search here..." value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search}/>
             <div className={styles.back2}>
              {(loading ? [...Array(3)] : filtered).map((obj, key) =>  
