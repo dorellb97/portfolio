@@ -104,7 +104,7 @@ export default function OnePost({ queryId }) {
                         return React.cloneElement(child, { ref: preElement });
                       })}                     
                     </pre>
-                    <button className={styles.copyButton} onClick={handleCopyCode}>
+                    <button className={styles.copyButton} onClick={handleCopyCode(preElement)}>
                       Copy
                     </button>
                     <button
