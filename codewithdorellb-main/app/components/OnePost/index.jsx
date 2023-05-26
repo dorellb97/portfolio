@@ -18,6 +18,7 @@ export default function OnePost({ queryId }) {
   const preRef = useRef(null);
   const defaultLineLimit = 3;
   const [lineLimit, setLineLimit] = useState(defaultLineLimit);
+  const showMoreButtonRef = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -43,10 +44,18 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  const handleCopyCode = () => {
-    const preElement = preRef.current;
+  // const handleCopyCode = () => {
+  //   const preElement = preRef.current;
+  //   if (preElement) {
+  //     const codeText = preElement.innerText;
+  //     navigator.clipboard.writeText(codeText);
+  //   }
+  // };
+
+  const handleCopyCode = (preCopy) => {
+    // const preElement = preRef.current;
     if (preElement) {
-      const codeText = preElement.innerText;
+      const codeText = preCopy.current.innerHTML;
       navigator.clipboard.writeText(codeText);
     }
   };
@@ -71,8 +80,8 @@ export default function OnePost({ queryId }) {
           <p className={styles.title}>{data?.getPost?.title}</p>
 
           <div className={styles.box}>
-            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a> 
-          </div> 
+            <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a>
+          </div>
 
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
@@ -84,7 +93,7 @@ export default function OnePost({ queryId }) {
             components={{
               pre: ({ children }) => {
                 const preElement = useRef(null);
-                const showMoreButtonRef = useRef(null);
+
 
                 useEffect(() => {
                   if (preElement.current && showMoreButtonRef.current) {
@@ -99,12 +108,14 @@ export default function OnePost({ queryId }) {
 
                 return (
                   <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
-                    <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": lineLimit }}>
+                    <pre ref={preRef} className={styles.codeContent}
+                      style={{ maxHeight: showMoreButtonRef.current?.innerText === "Show More" ? "" : "500px" }}
+                    >
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
-                      })}                     
+                      })}
                     </pre>
-                    <button className={styles.copyButton} onClick={()=>handleCopyCode(preElement)}>
+                    <button className={styles.copyButton} onClick={() => handleCopyCode(preElement)}>
                       Copy
                     </button>
                     <button
