@@ -19,6 +19,7 @@ export default function OnePost({ queryId }) {
   const defaultLineLimit = 3;
   const [lineLimit, setLineLimit] = useState(defaultLineLimit);
   const showMoreButtonRef = useRef(null);
+  const preElement = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -92,8 +93,6 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => {
-                const preElement = useRef(null);
-
 
                 useEffect(() => {
                   if (preElement.current && showMoreButtonRef.current) {
