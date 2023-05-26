@@ -18,8 +18,6 @@ export default function OnePost({ queryId }) {
   const preRef = useRef(null);
   const defaultLineLimit = 3;
   const [lineLimit, setLineLimit] = useState(defaultLineLimit);
-  const showMoreButtonRef = useRef(null);
-  const preElement = useRef(null);
 
   useEffect(() => {
     const monthNames = [
@@ -45,18 +43,10 @@ export default function OnePost({ queryId }) {
     setCreationDate(`${monthName} ${day}, ${year}`);
   }, [data]);
 
-  // const handleCopyCode = () => {
-  //   const preElement = preRef.current;
-  //   if (preElement) {
-  //     const codeText = preElement.innerText;
-  //     navigator.clipboard.writeText(codeText);
-  //   }
-  // };
-
-  const handleCopyCode = (preCopy) => {
-    // const preElement = preRef.current;
+  const handleCopyCode = (copyElement) => {
+    const preElement = copyElement.current;
     if (preElement) {
-      const codeText = preCopy.current.innerHTML;
+      const codeText = preElement.innerText;
       navigator.clipboard.writeText(codeText);
     }
   };
@@ -93,6 +83,8 @@ export default function OnePost({ queryId }) {
             remarkPlugins={[remarkGfm]}
             components={{
               pre: ({ children }) => {
+                const preElement = useRef(null);
+                const showMoreButtonRef = useRef(null);
 
                 useEffect(() => {
                   if (preElement.current && showMoreButtonRef.current) {
@@ -107,9 +99,7 @@ export default function OnePost({ queryId }) {
 
                 return (
                   <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
-                    <pre ref={preRef} className={styles.codeContent}
-                      style={{ maxHeight: showMoreButtonRef.current?.innerText === "Show More" ? "" : "500px" }}
-                    >
+                    <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": lineLimit }}>
                       {React.Children.map(children, (child) => {
                         return React.cloneElement(child, { ref: preElement });
                       })}
