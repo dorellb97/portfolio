@@ -6,7 +6,7 @@ const authSlice = createSlice({
     name: "data", 
     initialState: {
         auth: false,
-        // cart: []
+        projectType: 'Projects'
     },
     
     reducers: {
@@ -18,12 +18,14 @@ const authSlice = createSlice({
               console.log("elseauth==true")
             }
           },
-    }
-    
+      setProjectType: (state = initialState, action) => {
+        state.projectType = action.payload
+      }
+    } 
 })
 
-export const selectIsAuth = (state) => Boolean(state.data.auth);
+export const selectIsAuth = (state) => Boolean(state.data.projectType);
 
 export const authReducer = authSlice.reducer
 
-export const {addUsertoLocal} = authSlice.actions
+export const { addUsertoLocal, setProjectType } = authSlice.actions
