@@ -39,6 +39,9 @@ function Navbar() {
           ? "translate(5px, 32px) rotate(-45deg)"
           : "translate(2px, 31px) rotate(0deg)"
       });
+
+
+      
     
       const onSelect = (e) => {
         dispatch(setProjectType(e.currentKey?.toLowerCase()))
