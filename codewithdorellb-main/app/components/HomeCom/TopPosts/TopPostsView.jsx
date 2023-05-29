@@ -47,7 +47,7 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
             flexDirection: "column",
             marginLeft: 20,
             marginRight: 20,
-            minWidth: 250,
+            minWidth: 300,
             //   marginTop: 20,
           }}
         >
