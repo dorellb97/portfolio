@@ -1,0 +1,69 @@
+
+.description {
+	font-size: 14;
+	font-family: 'Montserrat';
+	font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+    .topPostsContainer{
+        width: 96%;
+    height:375px;
+    background: #F6F9FF;
+    box-shadow: 0px 0px 10px rgba(12, 13, 40, 0.15);
+	margin-right: 5vw;
+	display: flex;
+	flex-direction:  column;
+	margin-top: 1vw;
+    align-items: center;
+	font-family: 'Montserrat';
+	font-weight: bold;
+	overflow: auto;
+	// justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topPostsContainer{
+        width: 99vw;
+    height: auto;
+    background: #F6F9FF;
+    box-shadow: 0px 0px 10px rgba(12, 13, 40, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    }
+   
+}
+
+@media screen and (max-width: 1024px) {
+	.topPostsContainer{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.topPostsContainer{
+		width: 80%;
+		padding-bottom: 6vw;
+	
+	}
+
+	.description {
+		font-size: 12;
+	}
+	
+	}
+
+@media screen and (max-width: 479px) {
+	.topPostsContainer{
+		width: 90%;
+		padding-bottom: 6vw;
+	min-width: 300px;
+	}
+	.description {
+		font-size: 12px;
+	}
+	
+	}
