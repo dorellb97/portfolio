@@ -1,0 +1,24 @@
+
+
+.topPosts {
+	display: flex;
+	flex-direction: row;
+}
+
+.hideWeb {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.topPosts {
+		flex-direction:  column;
+	}
+
+	.hideTab {
+		display: none;
+	}
+
+	.hideWeb {
+		display: block;
+	}
+}
