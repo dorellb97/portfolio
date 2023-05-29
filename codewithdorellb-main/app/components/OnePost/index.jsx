@@ -51,17 +51,21 @@ export default function OnePost({ queryId }) {
     }
   };
 
-  const handleToggleExpand = () => {
-    setExpanded(!expanded);
-  };
+  const [isequal, setISequal] = useState(false)
+  const [preVal, setPreVal]= useState('');
+  const [isClick, setIsClick] = useState(false)
+  const handleShowMoreOrLess = (first, second) => {
+    if(first === second) {
+      setPreVal(first)
 
-  const handleShowMoreOrLess = () => {
+    }
     if (lineLimit === defaultLineLimit) {
-      setLineLimit(null); // Show all lines
+      setLineLimit(null);
     } else {
-      setLineLimit(defaultLineLimit); // Show default number of lines
+      setLineLimit(defaultLineLimit);
     }
   };
+
 
   return (
     <div className={styles.preback}>
@@ -77,49 +81,58 @@ export default function OnePost({ queryId }) {
           <p className={styles.pretitle}>{data?.getPost?.pretitle}</p>
         </div>
         <div className={styles.premark}>
-          <ReactMarkdown
-            className={styles.markdown}
-            children={data?.getPost?.sourceCode}
-            remarkPlugins={[remarkGfm]}
-            components={{
-              pre: ({ children }) => {
-                const preElement = useRef(null);
-                const showMoreButtonRef = useRef(null);
-
-                useEffect(() => {
-                  if (preElement.current && showMoreButtonRef.current) {
-                    const preHeight = preElement.current.offsetHeight;
-                    const lineHeight = parseInt(getComputedStyle(preElement.current).lineHeight);
-                    const maxLines = Math.floor(preHeight / lineHeight);
-                    if (maxLines > defaultLineLimit) {
-                      showMoreButtonRef.current.style.display = "block";
-                    }
+        <ReactMarkdown
+          className={styles.markdown}
+          children={data?.getPost?.sourceCode}
+          remarkPlugins={[remarkGfm]}
+          components={{
+            pre: (props) => {
+              const { children, node } = props;
+              const index = 1
+              const preElement = useRef(null);
+              const showMoreButtonRef = useRef(null);
+              useEffect(() => {
+                if (preElement.current && showMoreButtonRef.current) {
+                  const preHeight = preElement.current.offsetHeight;
+                  const lineHeight = parseInt(getComputedStyle(preElement.current).lineHeight);
+                  const maxLines = Math.floor(preHeight / lineHeight);
+                  if (maxLines > defaultLineLimit) {
+                    showMoreButtonRef.current.style.display = "block";
                   }
-                }, []);
+                }
+              }, []);
 
-                return (
-                  <div className={`${styles.codeContainer} ${expanded ? styles.expanded : ""}`}>
-                    <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": lineLimit }}>
-                      {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { ref: preElement });
-                      })}
-                    </pre>
-                    <button className={styles.copyButton} onClick={() => handleCopyCode(preElement)}>
-                      Copy
-                    </button>
-                    <button
-                      ref={showMoreButtonRef}
-                      className={styles.showMoreButton}
-                      onClick={handleShowMoreOrLess}
-                    >
-                      {lineLimit === defaultLineLimit ? "Show More" : "Show Less"}
-                    </button>
-                  </div>
-                );
-              },
-
-            }}
-          />
+              return (
+                <div className={`${styles.codeContainer} ${!expanded ? styles.expanded : ""}`}>
+                  <pre ref={preRef} className={styles.codeContent} style={{ "--line-limit": !isClick ? 1 : isClick && preVal === node?.children[0]?.children[0]?.value? null : 1 }}>
+                    {React.Children.map(children, (child) => {
+                      return React.cloneElement(child, { ref: preElement });
+                    })}
+                  </pre>
+                  <button className={styles.copyButton} onClick={() => handleCopyCode(preElement)}>
+                    Copy
+                  </button>
+                  <button
+                    ref={showMoreButtonRef}
+                    className={styles.showMoreButton}
+                    onClick={() => {
+                      setIsClick(!isClick)
+                      handleShowMoreOrLess(preElement.current.innerText, node?.children[0]?.children[0]?.value)
+                    }
+                    }
+                  >
+                  {!isClick
+                    ? "Show More"
+                    : isClick && preVal === node?.children[0]?.children[0]?.value
+                      ? "Show Less"
+                      : "Show More"
+                  }
+                  </button>
+                </div>
+              );
+            },
+          }}
+        />
         </div>
       </div>
     </div>
