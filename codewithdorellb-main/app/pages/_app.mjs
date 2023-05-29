@@ -61,6 +61,7 @@ const App = ({
         :
       <Layout>
         <Head>
+        <meta name="google-site-verification" content="F5p8KmxlsIE2HtKxI9-wL9AnENChWbYL0Ai0sX-Qckk" />
         </Head>
         <main>
         <>
