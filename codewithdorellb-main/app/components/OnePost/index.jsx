@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import TopPostsView from "./TopPostsView";
 
 export default function OnePost({ queryId }) {
   const router = useRouter();
