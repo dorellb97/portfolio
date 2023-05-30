@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
-import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
@@ -9,6 +8,7 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../../hooks/AuthContext';
 import { useSpring, animated } from '@react-spring/web'
 import { Dropdown } from "@nextui-org/react";
+import React, { useEffect } from 'react';
 import { setProjectType } from "../../redux/slices/auth";
 
 function Navbar() {
