@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './Navbar.module.scss'
+import React from 'react'
 import { useTranslation } from 'next-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
@@ -8,7 +9,6 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../../hooks/AuthContext';
 import { useSpring, animated } from '@react-spring/web'
 import { Dropdown } from "@nextui-org/react";
-import React, { useEffect } from 'react';
 import { setProjectType } from "../../redux/slices/auth";
 
 function Navbar() {
@@ -16,7 +16,6 @@ function Navbar() {
     const router = useRouter();
     const [isOpen, toggle] = useState(false)
     const dispatch = useDispatch();
-    
 
     const onLogout = () => {
         logout();
@@ -40,11 +39,6 @@ function Navbar() {
           ? "translate(5px, 32px) rotate(-45deg)"
           : "translate(2px, 31px) rotate(0deg)"
       });
-
-      useEffect(() => {
-        dispatch(setProjectType("ALL"));
-    }, []);
-      
     
       const onSelect = (e) => {
         dispatch(setProjectType(e.currentKey?.toLowerCase()))
@@ -68,9 +62,7 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
-            
-            <Dropdown.Item key="ALL">ALL</Dropdown.Item>
-            <Dropdown.Item key="CSS">CSS Project</Dropdown.Item>
+            <Dropdown.Item key="Css">CSS Project</Dropdown.Item>
             <Dropdown.Item key="JS">JS Projects</Dropdown.Item>
             <Dropdown.Item key="Games">Games</Dropdown.Item>
         
@@ -127,10 +119,7 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
-            
-
-            <Dropdown.Item key="ALL">ALL</Dropdown.Item>
-            <Dropdown.Item key="CSS">CSS Project</Dropdown.Item>
+            <Dropdown.Item key="Css">CSS Project</Dropdown.Item>
             <Dropdown.Item key="JS">JS Projects</Dropdown.Item>
             <Dropdown.Item key="Games">Games</Dropdown.Item>
         
