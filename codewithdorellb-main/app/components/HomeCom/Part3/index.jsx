@@ -27,8 +27,8 @@ export default function Part3() {
   
   const filtered = data?.getAllPosts?.filter(obj => {
     return (
-      obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase()),
-      all.push(data)
+      obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase())
+
     );
     
   });
