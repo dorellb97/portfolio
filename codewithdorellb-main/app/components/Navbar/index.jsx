@@ -16,6 +16,7 @@ function Navbar() {
     const router = useRouter();
     const [isOpen, toggle] = useState(false)
     const dispatch = useDispatch();
+    
 
     const onLogout = () => {
         logout();
@@ -40,7 +41,9 @@ function Navbar() {
           : "translate(2px, 31px) rotate(0deg)"
       });
 
-
+      useEffect(() => {
+        dispatch(setProjectType("ALL"));
+    }, []);
       
     
       const onSelect = (e) => {
@@ -65,7 +68,7 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
-            <option selected="selected">ALL</option>
+            
             <Dropdown.Item key="ALL">ALL</Dropdown.Item>
             <Dropdown.Item key="Css">Css Project</Dropdown.Item>
             <Dropdown.Item key="JS">JS Projects</Dropdown.Item>
@@ -124,7 +127,7 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
-            <option selected="selected">ALL</option>
+            
 
             <Dropdown.Item key="ALL">ALL</Dropdown.Item>
             <Dropdown.Item key="Css">Css Project</Dropdown.Item>
