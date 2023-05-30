@@ -68,8 +68,7 @@ export default function OnePost({ queryId }) {
 
 
   return (
-    <div className={styles.hideTab}>
-        <TopPostsView />
+    
     <div className={styles.preback}>
       <div className={styles.back}>
         <div className={styles.head}>
@@ -138,6 +137,6 @@ export default function OnePost({ queryId }) {
         </div>
       </div>
     </div>
-    </div>
+    
   );
 }
