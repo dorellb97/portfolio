@@ -61,13 +61,15 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
                   marginTop: 15,
                 }}
               >
+                <a href={`/projects/${item?.id}`}>
                 <img
                   style={{ marginRight: 5 }}
                   width={56}
                   height={56}
                   src={item?.videoLink}
-                  href={`/projects/${item?.id}`}
                 />
+                </a>
+                
                 {/* <p   className={styles.description}> <a href={`/projects/${item?.id}`}></a>{item.title}</p> */}
                  <a href={`/projects/${item?.id}`}  className={styles.description} > {item.title}</a> 
                 
