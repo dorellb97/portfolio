@@ -40,7 +40,7 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
   return (
     <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>
       <div ref={ref} className={styles.topPostsContainer}>
-        <span style={{ fontSize: 18, marginTop: 10 }}>Top Posts</span>
+        <span style={{ fontSize: 20, marginTop: 10 }}>Top Posts</span>
         <div
           style={{
             display: "flex",
@@ -59,6 +59,7 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
                   justifyContent: "flex-start",
                   alignItems: "center",
                   marginTop: 15,
+                  fontStize: 50
                 }}
               >
                 <a href={`/projects/${item?.id}`}>
