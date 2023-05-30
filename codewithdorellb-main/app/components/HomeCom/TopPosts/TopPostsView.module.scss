@@ -33,6 +33,7 @@
     justify-content: space-between;
     gap: 30px;
     align-items: center;
+	color:black;
     }
    
 }
@@ -40,6 +41,7 @@
 @media screen and (max-width: 1024px) {
 	.topPostsContainer{
 		width: 100%;
+
 	}
 }
 
@@ -47,7 +49,7 @@
 	.topPostsContainer{
 		width: 80%;
 		padding-bottom: 6vw;
-	
+	color:black;
 	}
 
 	.description {
@@ -61,6 +63,7 @@
 		width: 90%;
 		padding-bottom: 6vw;
 	min-width: 300px;
+	color:black;
 	}
 	.description {
 		font-size: 12px;
