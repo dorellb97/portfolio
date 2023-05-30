@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../../apollo/posts';
 import { useDebounce } from '@react-hooks-library/core';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 export default function Part3() {
   const { t } = useTranslation();
@@ -24,36 +24,39 @@ export default function Part3() {
       "videoLink": "zzZbcrhmYdU"
     }
   ];
-
+  
   const filtered = data?.getAllPosts?.filter(obj => {
     return (
-      obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase())
+      obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase()),
+      all.push(data)
     );
+    
   });
 
-  let css = [];
-  let js = []; 
-  let games = [];
-  let all = [];
-  const categorizedData = useMemo(() => {
-    filtered?.forEach((data) => {
-      if (data.title?.toLowerCase().includes("css")) {
-        css.push(data);
-      } else if (data.title?.toLowerCase().includes("js")) {
-        js.push(data);
-      } else {
-        games.push(data);
-      }
-      all.push(data);
-    });
-
+  let css = []
+  let js = [] 
+  let games = []
+  let all = []
+  const categorizedData = useMemo(() => filtered?.reduce((agg, data) => {
+    if(data.title?.toLowerCase().includes("css")) {
+      css.push(data)
+    } else if(data.title?.toLowerCase().includes("js")) {
+      js.push(data)
+    } else   {
+      games.push(data)
+    }
+    
+    all.push(data)
+    
     return {
-      css,
-      js,
-      games,
-      all,
-    };
-  }, [filtered]);
+      ...agg,
+      css: css, 
+      js: js, 
+      games: games,
+      all:all
+      
+    }
+  }, {}), [filtered])
 
   return (
     <div className={styles.back} id='projects'>
@@ -65,14 +68,16 @@ export default function Part3() {
         {/* <Posts /> */}
       </div>
 
-      {/* <div className={styles.search} id='category'>
-        <label  htmlFor="projects">Choose a category</label>
-        <select name="projects" id="cars">
-          {filtered && filtered.map(obj => (
-            <option value={obj.title} key={obj.id}>{obj.title}</option>
-          ))}
-        </select>
-      </div> */}
+
+       {/* <div className={styles.search} id='category'>
+      <label  for="projects">Choose a category</label>
+      <select name="projects" id="cars">
+        {filtered && filtered.map(obj => (
+          <option value={obj.title} key={obj.id}>{obj.title}</option>
+        ))}
+      </select>
+      </div>  */}
+
 
       <input type="search" placeholder="Search here..." value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search} />
 
