@@ -67,7 +67,8 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
                   height={56}
                   src={item?.videoLink}
                 />
-                <p className={styles.description}>{item.title}</p>
+                <p  href={`/projects/${id}`} className={styles.description}>{item.title}</p>
+                
               </div>
             );
           })}
