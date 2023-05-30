@@ -65,6 +65,7 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
+            <option selected="selected">ALL</option>
             <Dropdown.Item key="ALL">ALL</Dropdown.Item>
             <Dropdown.Item key="Css">Css Project</Dropdown.Item>
             <Dropdown.Item key="JS">JS Projects</Dropdown.Item>
@@ -123,6 +124,8 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
+            <option selected="selected">ALL</option>
+
             <Dropdown.Item key="ALL">ALL</Dropdown.Item>
             <Dropdown.Item key="Css">Css Project</Dropdown.Item>
             <Dropdown.Item key="JS">JS Projects</Dropdown.Item>
