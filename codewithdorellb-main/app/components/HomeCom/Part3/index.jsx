@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import styles from './Part3.module.scss';
 import { useTranslation } from 'next-i18next';
 import PostsView from '../Posts/PostsView';
@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../../apollo/posts';
 import { useDebounce } from '@react-hooks-library/core';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 export default function Part3() {
   const { t } = useTranslation();
@@ -15,7 +15,7 @@ export default function Part3() {
   const debouncedSearchText = useDebounce(searchText, 500); // Debounce time of 500 milliseconds
   const { projectType } = useSelector((state) => state.auth); 
 
-  const { data, loading, error, refetch } = useQuery(GET_POSTS);
+  const { data, loading, error } = useQuery(GET_POSTS);
   const fakeArray = [
     {
       "id": "64580bffc8a2b84184b66a76",
@@ -25,14 +25,12 @@ export default function Part3() {
     }
   ];
   
-  useEffect(() => {
-    refetch();
-  }, []);
-
   const filtered = data?.getAllPosts?.filter(obj => {
     return (
       obj.title.toLowerCase().includes(debouncedSearchText?.toLowerCase())
+
     );
+    
   });
 
   let css = []
@@ -70,14 +68,16 @@ export default function Part3() {
         {/* <Posts /> */}
       </div>
 
-      {/* <div className={styles.search} id='category'>
-        <label  htmlFor="projects">Choose a category</label>
-        <select name="projects" id="cars">
-          {filtered && filtered.map(obj => (
-            <option value={obj.title} key={obj.id}>{obj.title}</option>
-          ))}
-        </select>
-      </div> */}
+
+       {/* <div className={styles.search} id='category'>
+      <label  for="projects">Choose a category</label>
+      <select name="projects" id="cars">
+        {filtered && filtered.map(obj => (
+          <option value={obj.title} key={obj.id}>{obj.title}</option>
+        ))}
+      </select>
+      </div>  */}
+
 
       <input type="search" placeholder="Search here..." value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search} />
 
