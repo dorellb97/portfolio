@@ -26,6 +26,7 @@ const Layout = ({ children }) => {
 <Head>
    <link rel="icon" href="/logo.png"/>
         <title>Codewith_Dorell.B - Creating New Level Websites </title>
+        <meta name="clckd" content="10dcdb4fd357beceeaed3e11c0430453" />
         <meta name="description" content="WebXwiz is a company specializing in creating websites of any type. We provide high SEO optimization, modern performance and high security." />
       </Head>
 <div className={montserrat.className}>
