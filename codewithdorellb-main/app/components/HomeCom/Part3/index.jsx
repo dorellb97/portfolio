@@ -106,7 +106,7 @@ export default function Part3() {
             />
           )
         )}
-        <div className={styles.box}>
+        <div className={styles.glowingbtn}>
           <Link href="/#home">
             <button className={styles.glowingbtn}> Back to Header  </button>
           </Link>
