@@ -109,7 +109,7 @@ export default function Part3() {
         )}
         <div className={styles.box}>
           <Link href="/#home">
-            <button className={styles.box}> Back to Header  </button>
+            <button> Back to Header  </button>
           </Link>
         </div>
       </div>
