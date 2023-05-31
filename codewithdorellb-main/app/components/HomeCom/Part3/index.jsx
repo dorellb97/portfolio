@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState, useMemo, useEffect } from "react";
 import styles from "./Part3.module.scss";
-import btn from "./btn.module.scss"
 import { useTranslation } from "next-i18next";
 import PostsView from "../Posts/PostsView";
 import { useQuery } from "@apollo/client";
