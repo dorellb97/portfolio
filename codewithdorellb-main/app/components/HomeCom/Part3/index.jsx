@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState, useMemo, useEffect } from "react";
 import styles from "./Part3.module.scss";
+import btn from "./btn.module.scss"
 import { useTranslation } from "next-i18next";
 import PostsView from "../Posts/PostsView";
 import { useQuery } from "@apollo/client";
@@ -106,9 +107,9 @@ export default function Part3() {
             />
           )
         )}
-        <div className={styles.glowingbtn}>
+        <div className={btn.glowingbtn}>
           <Link href="/#home">
-            <button className={styles.glowingbtn}> Back to Header  </button>
+            <button className={btn.glowingbtn}> Back to Header  </button>
           </Link>
         </div>
       </div>
