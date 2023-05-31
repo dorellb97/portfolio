@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
-:root {
-  --glow-color: hsl(186 100% 69%);
-}
 
 *,
 *::before,
@@ -25,6 +22,7 @@
   font-size: 2em;
   font-weight: 900;
   letter-spacing: 1em;
+  --glow-color: hsl(186 100% 69%);
 
   -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
