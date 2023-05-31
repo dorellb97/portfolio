@@ -1,4 +1,14 @@
 @use "../../styles/various.module.scss" as var;
+.back{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100px;
+background: #F2F2FF;
+align-items: center;
+justify-content: space-between;
+box-shadow: 0px 4px 4px rgba(57, 17, 67, 0.1);
+}
 @media screen and (min-width: 1024px) {
     .back{
         display: flex;
@@ -137,6 +147,7 @@
     @media screen and (max-width: 768px) {
         .back{
             height: 150px;
+            box-shadow: 0px 4px 4px rgba(57, 17, 67, 0.1);
         }
         .center{
             p{
