@@ -71,7 +71,7 @@ const App = ({
   onError={ (e) => { console.error('Script failed to load', e) }}
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644" 
 /> */}
- <Script
+ {/* <Script
         src={
           'http' +
           (location.protocol === 'https:' ? 's' : '') +
@@ -85,10 +85,10 @@ const App = ({
           width= "728"
           params ="{}"
           onError={ (e) => { console.error('Script failed to load', e) }}
-      />
+      /> */}
 
-{/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
-     crossorigin="anonymous"></script> */}
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
+     crossorigin="anonymous"></script> 
         <Component {...pageProps} />
         </>
         </main>
