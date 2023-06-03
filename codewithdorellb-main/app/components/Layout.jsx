@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { addUsertoLocal } from "../redux/slices/auth";
 import { Montserrat } from "next/font/google";
 
-
 const montserrat = Montserrat({
     weight: ["100", "200", "300", "400", "500","600", "700", "800", "900"],
     subsets: ["cyrillic", "latin"],
@@ -24,6 +23,7 @@ const Layout = ({ children }) => {
     return (
 <>
 <Head>
+
    <link rel="icon" href="/logo.png"/>
         <title>Codewith_Dorell.B - Creating New Level Websites </title>
         

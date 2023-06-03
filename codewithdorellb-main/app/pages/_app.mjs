@@ -61,6 +61,7 @@ const App = ({
         :
       <Layout>
         <Head>
+       
         </Head>
         <main>
         <>
@@ -69,10 +70,18 @@ const App = ({
   onError={ (e) => { console.error('Script failed to load', e) }}
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644" 
 /> */}
+ <Script
+        src={
+          'http' +
+          (location.protocol === 'https:' ? 's' : '') +
+          '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'
+        }
+        strategy="afterInteractive"
+      />
+      
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
      crossorigin="anonymous"></script>
         <Component {...pageProps} />
-     
         </>
         </main>
       </Layout>
