@@ -73,8 +73,10 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
                 
                 {/* <p   className={styles.description}> <a href={`/projects/${item?.id}`}></a>{item.title}</p> */}
                  <a href={`/projects/${item?.id}`}  className={styles.description} > {item.title}</a> 
-                
+                 <script async="async" data-cfasync="false" src="//pl19613819.highrevenuegate.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
               </div>
+              
             );
           })}
         </div>
