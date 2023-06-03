@@ -26,9 +26,6 @@ const createApolloClient = (cache = {}) =>
   });
 export const apolloClient = createApolloClient(ApolloCache)
 
-useEffect(() => {
-  loadAd();
-}, []);
 
 const App = ({
   Component,
