@@ -14,6 +14,7 @@ import { setProjectType } from "../../redux/slices/auth";
 
 
 function Navbar() {
+  
     const { user, logout, authredux } = useContext(AuthContext);
     const router = useRouter();
     const [isOpen, toggle] = useState(false)
