@@ -97,11 +97,12 @@ function Navbar() {
           </div>
           }
           </div>
-          </div>
+          
           <div className={styles.last}>
           <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/instagram.svg" width={35} height={35}/></a>
           <a href='https://t.me/codewith_dorellb' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
           <a href='https://www.youtube.com/@codewith_Dorell.B' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
+          </div>
           </div>
           <div className={styles.menu}>
           {isOpen ?
