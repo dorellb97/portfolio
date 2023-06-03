@@ -62,8 +62,8 @@ function Navbar() {
             selectedKeys={projectType}
             onSelectionChange={(e) => onSelect(e)}
           >
-            <Link href='/#projects' > 
-            <Dropdown.Item   key="Css">CSS Project</Dropdown.Item></Link>
+             
+            <Dropdown.Item  href="/#projects" key="Css">CSS Project</Dropdown.Item>
             <Dropdown.Item href="/#projects" key="JS">JS Projects</Dropdown.Item>
             <Dropdown.Item href="/#projects" key="Games">Games</Dropdown.Item>
         
