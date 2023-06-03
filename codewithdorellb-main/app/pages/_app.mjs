@@ -83,7 +83,7 @@ const App = ({
           height = "90"
           width= "728"
           params ="{}"
-        
+          onError={ (e) => { console.error('Script failed to load', e) }}
       />
 
 {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
