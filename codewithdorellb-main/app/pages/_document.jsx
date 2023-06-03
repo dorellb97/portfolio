@@ -2,8 +2,10 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
+    
     <Html lang="en">
         <Head>
+          
         <meta name="keywords" content="web, development, site, website, web-creation,website creation, modern website, SEO, вебсайты, разработка, веб" />
         <meta name="author" content="Dorel Boencius" />
         <meta name="google-site-verification" content="F5p8KmxlsIE2HtKxI9-wL9AnENChWbYL0Ai0sX-Qckk" />
