@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { AuthContext } from '../../hooks/AuthContext';
 import { useSpring, animated } from '@react-spring/web'
 import { Dropdown } from "@nextui-org/react";
@@ -21,7 +21,16 @@ function Navbar() {
     const dispatch = useDispatch();
 
    
-    
+    const loadAd = () => {
+      const script = document.createElement('script');
+      script.src = 'ADSTERA_AD_SCRIPT_URL'
+      script.async = true;
+      document.getElementById('ad-container').appendChild(script);
+    };
+  
+    useEffect(() => {
+      loadAd();
+    }, []);
    
 
     const onLogout = () => {
@@ -53,6 +62,7 @@ function Navbar() {
     return (
       
       <div className={styles.back}>
+        <div id="ad-container"></div>
           <div className={styles.logo}>
           <Link href='/' style={{textDecoration: "none"}}><p>Codewith_Dorell.B</p></Link>
           </div>
