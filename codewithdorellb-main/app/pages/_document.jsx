@@ -6,6 +6,7 @@ export default function Document() {
         <Head>
         <meta name="keywords" content="web, development, site, website, web-creation,website creation, modern website, SEO, вебсайты, разработка, веб" />
         <meta name="author" content="Dorel Boencius" />
+        <meta name="google-site-verification" content="F5p8KmxlsIE2HtKxI9-wL9AnENChWbYL0Ai0sX-Qckk" />
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
