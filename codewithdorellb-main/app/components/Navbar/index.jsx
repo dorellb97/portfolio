@@ -189,7 +189,7 @@ function Navbar() {
           // <CgMenu className={styles.burger} onClick={() => setIsOpenMenu(!isOpenMenu)}/>  
         }
         </div>
-        <div id="ad-container" height="90" width="728"></div>
+        <div id="ad-container" height="90px" width="728px"></div>
       </div>
     )
 }
