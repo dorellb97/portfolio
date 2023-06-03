@@ -20,6 +20,7 @@ export default function Footer() {
         <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/instagram.svg" width={35} height={35}/></a>
         <a href='https://t.me/codewith_dorellb/' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
         <a href='https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={35}/></a>
+        <a href=""><img alt="banner" src="https://landings-cdn.adsterratech.com/referralBanners/png/80%20x%2030%20px.png" /></a>
         </div>
     </div>
     )
