@@ -192,7 +192,6 @@ function Navbar() {
         }
         </div>
         <div>
-        <iframe src= "http://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js" scrolling="no" frameborder="0" height="90px" width="728px"></iframe> 
         </div>
          <div id="ad-container" height="90px" width="728px"></div> 
       </div>

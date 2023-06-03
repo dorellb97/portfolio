@@ -28,6 +28,8 @@ export default function HomeCom() {
       </div>
       <div className={styles.hideTab}>
         <TopPostsView />
+        <script async="async" data-cfasync="false" src="//pl19613819.highrevenuegate.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
       </div>
 
       {/* <div>Hello how are you</div> */}
