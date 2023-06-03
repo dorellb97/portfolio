@@ -40,8 +40,8 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
   return (
     
     <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>
-      <script async="async" data-cfasync="false" src="//pl19613819.highrevenuegate.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
-                  <div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
+      <script async="async" data-cfasync="false" src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
       <div ref={ref} className={styles.topPostsContainer}>
         <span style={{ fontSize: 20, marginTop: 10 }}>Top Posts</span>
         <div
