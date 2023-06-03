@@ -26,6 +26,18 @@ const createApolloClient = (cache = {}) =>
   });
 export const apolloClient = createApolloClient(ApolloCache)
 
+
+const loadAd = () => {
+  const script = document.createElement('script');
+  script.src = '//www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'; // Replace ADSTERA_AD_SCRIPT_URL with the actual URL provided by Adstera
+  script.async = true;
+  document.getElementById('ad-container').appendChild(script);
+};
+
+useEffect(() => {
+  loadAd();
+}, []);
+
 const App = ({
   Component,
   pageProps
@@ -61,7 +73,8 @@ const App = ({
         :
       <Layout>
         <Head>
-       
+        <div id="ad-container" height = "90"
+          width= "728" ></div>
         </Head>
         <main>
         <>
@@ -70,7 +83,7 @@ const App = ({
   onError={ (e) => { console.error('Script failed to load', e) }}
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644" 
 /> */}
- <Script
+ {/* <Script
         src={
           'http' +
           (location.protocol === 'https:' ? 's' : '') +
@@ -84,7 +97,7 @@ const App = ({
           width= "728"
           params ="{}"
           onError={ (e) => { console.error('Script failed to load', e) }}
-      />
+      /> */}
 
 {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
      crossorigin="anonymous"></script> */}
