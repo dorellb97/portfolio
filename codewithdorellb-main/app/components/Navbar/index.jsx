@@ -11,21 +11,23 @@ import { useSpring, animated } from '@react-spring/web'
 import { Dropdown } from "@nextui-org/react";
 import { setProjectType } from "../../redux/slices/auth";
 
+
+
 function Navbar() {
     const { user, logout, authredux } = useContext(AuthContext);
     const router = useRouter();
     const [isOpen, toggle] = useState(false)
     const dispatch = useDispatch();
 
-
     const loadAd = () => {
       const script = document.createElement('script');
-      script.src =  'http' +
+      script.src ='http' +
       (location.protocol === 'https:' ? 's' : '') +
-      '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js' // Replace ADSTERA_AD_SCRIPT_URL with the actual URL provided by Adstera
+      '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'; // Replace ADSTERA_AD_SCRIPT_URL with the actual URL provided by Adstera
       script.async = true;
       document.getElementById('ad-container').appendChild(script);
     };
+   
     
     useEffect(() => {
       loadAd();
