@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useContext, useState.useEffect } from 'react'
+import { useContext, useState,useEffect } from 'react'
 import { AuthContext } from '../../hooks/AuthContext';
 import { useSpring, animated } from '@react-spring/web'
 import { Dropdown } from "@nextui-org/react";
