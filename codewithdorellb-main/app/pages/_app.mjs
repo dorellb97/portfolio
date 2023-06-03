@@ -77,10 +77,17 @@ const App = ({
           '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'
         }
         strategy="afterInteractive"
+        
+          key = 'fbfe14d99dd78af78f889fa9e7198342'
+          format = 'iframe'
+          height = "90"
+          width= "728"
+          params ="{}"
+        
       />
-      
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
-     crossorigin="anonymous"></script>
+
+{/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
+     crossorigin="anonymous"></script> */}
         <Component {...pageProps} />
         </>
         </main>
