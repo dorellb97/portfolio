@@ -64,7 +64,6 @@ function Navbar() {
     return (
       
       <div className={styles.back}>
-        <div id="ad-container" height="90" width="728">
           <div className={styles.logo}>
           <Link href='/' style={{textDecoration: "none"}}><p>Codewith_Dorell.B</p></Link>
           </div>
@@ -99,7 +98,7 @@ function Navbar() {
           <p onClick={onLogout}>Logout</p>
           </div>
           }
-          </div>
+          
           </div>
           <div className={styles.last}>
           <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/instagram.svg" width={35} height={35}/></a>
@@ -108,6 +107,7 @@ function Navbar() {
           </div>
           
           <div className={styles.menu}>
+          <div id="ad-container" height="90" width="728"></div>
           {isOpen ?
           <>
         <div className={styles.backmenu}>
