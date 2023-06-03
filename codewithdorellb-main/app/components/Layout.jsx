@@ -24,6 +24,16 @@ const Layout = ({ children }) => {
     return (
 <>
 <Head>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'fbfe14d99dd78af78f889fa9e7198342',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js"></scr' + 'ipt>');
+</script>
+
    <link rel="icon" href="/logo.png"/>
         <title>Codewith_Dorell.B - Creating New Level Websites </title>
         

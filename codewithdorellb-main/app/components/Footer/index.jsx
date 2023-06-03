@@ -3,9 +3,13 @@ import styles from './Footer.module.scss'
 import React from 'react'
 import { useTranslation } from 'next-i18next'
 export default function Footer() {
+  
   const {t} = useTranslation()
+  
     return (
+      
     <div className={styles.back}>
+      
         <div className={styles.logo}>
         <a href='/' style={{textDecoration: "none"}}><p>Codewith_Dorell.B</p></a>
         </div>
