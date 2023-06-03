@@ -107,7 +107,7 @@ function Navbar() {
           </div>
           
           <div className={styles.menu}>
-          <div id="ad-container" height="90" width="728"></div>
+          
           {isOpen ?
           <>
         <div className={styles.backmenu}>
