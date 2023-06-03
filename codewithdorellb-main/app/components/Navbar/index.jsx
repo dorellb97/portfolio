@@ -19,19 +19,9 @@ function Navbar() {
     const [isOpen, toggle] = useState(false)
     const dispatch = useDispatch();
 
-    const loadAd = () => {
-      const script = document.createElement('script');
-      script.src ='http' +
-      (location.protocol === 'https:' ? 's' : '') +
-      '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'; // Replace ADSTERA_AD_SCRIPT_URL with the actual URL provided by Adstera
-      script.async = true;
-      document.getElementById('ad-container').appendChild(script);
-    };
    
     
-    useEffect(() => {
-      loadAd();
-    }, []);
+   
 
     const onLogout = () => {
         logout();
@@ -60,7 +50,7 @@ function Navbar() {
         dispatch(setProjectType(e.currentKey?.toLowerCase()))
       }
     return (
-      <div id="ad-container">
+      
       <div className={styles.back}>
           <div className={styles.logo}>
           <Link href='/' style={{textDecoration: "none"}}><p>Codewith_Dorell.B</p></Link>
@@ -103,7 +93,7 @@ function Navbar() {
           <a href='https://t.me/codewith_dorellb' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
           <a href='https://www.youtube.com/@codewith_Dorell.B' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
           </div>
-          </div>
+          
           <div className={styles.menu}>
           {isOpen ?
           <>
