@@ -191,8 +191,8 @@ function Navbar() {
           // <CgMenu className={styles.burger} onClick={() => setIsOpenMenu(!isOpenMenu)}/>  
         }
         </div>
-        <iframe id="ad-container"  width="90" height="728" >  </iframe> 
-        {/* <div id="ad-container" height="90px" width="728px"></div> */}
+        
+         <div id="ad-container" height="90px" width="728px"></div> 
       </div>
     )
 }
