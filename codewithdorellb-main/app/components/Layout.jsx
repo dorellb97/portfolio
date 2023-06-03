@@ -6,7 +6,6 @@ import {useContext} from 'react'
 import { useDispatch } from "react-redux";
 import { addUsertoLocal } from "../redux/slices/auth";
 import { Montserrat } from "next/font/google";
-import banner from "./AdsComponents"
 const montserrat = Montserrat({
     weight: ["100", "200", "300", "400", "500","600", "700", "800", "900"],
     subsets: ["cyrillic", "latin"],
@@ -28,7 +27,7 @@ const Layout = ({ children }) => {
         <title>Codewith_Dorell.B - Creating New Level Websites </title>
         
         <meta name="description" content="WebXwiz is a company specializing in creating websites of any type. We provide high SEO optimization, modern performance and high security." />
-        <banner/>
+        
       </Head>
 <div className={montserrat.className}>
     
