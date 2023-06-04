@@ -21,19 +21,21 @@ export default function HomeCom() {
         <Part1 />
         <div className={styles.hideWeb}>
           <TopPostsView />
+          </div>
           <div>
-        <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" align-items="center" frameborder="0" scrolling="no"></iframe>  
+          <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
      </div>
-        </div>
+        
         <Part3 />
         {/* <TestComponent /> */}
         {/* <Part2 /> */}
       </div>
       <div className={styles.hideTab}>
         <TopPostsView />
+        </div>
         <div>
-         <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" align-items="center" frameborder="0" scrolling="no"></iframe>  
-      </div>
+         <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>  
+      
       </div>
 
       {/* <div>Hello how are you</div> */}
