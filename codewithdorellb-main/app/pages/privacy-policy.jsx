@@ -17,6 +17,7 @@ export default function PrivacyPolicy() {
         style={{ color: "04051cb1" }}
       >
         <h1>Privacy Policy</h1>
+        <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" witdh="728" hight="90" align-items="center" frameborder="0" scrolling="no"></iframe> 
         <p>Last updated: May 18, 2023</p>
         <p>
           This Privacy Policy describes Our policies and procedures on the
@@ -512,6 +513,7 @@ export default function PrivacyPolicy() {
           changes. Changes to this Privacy Policy are effective when they are
           posted on this page.
         </p>
+        <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" witdh="728" hight="90" align-items="center" frameborder="0" scrolling="no"></iframe> 
         <h1>Contact Us</h1>
         <p>
           If you have any questions about this Privacy Policy, You can contact
