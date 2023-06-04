@@ -32,6 +32,7 @@ export default function HomeCom() {
         }}
       >
           <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
+          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="320"width ="50" align-items="center" frameborder="0" scrolling="no"></iframe>
      </div>
      </div>
         
@@ -43,6 +44,7 @@ export default function HomeCom() {
         <TopPostsView />
         <div>
          <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>  
+         <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="320"width ="50" align-items="center" frameborder="0" scrolling="no"></iframe>
          </div>
       </div>
 
