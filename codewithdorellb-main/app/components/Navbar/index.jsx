@@ -94,9 +94,7 @@ function Navbar() {
           <a href='https://www.youtube.com/@codewith_Dorell.B' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
           </div>   
           <div className={styles.menu}>
-          <div>
-          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
-          </div>
+          
           {isOpen ?
           <>
         <div className={styles.backmenu}>
@@ -182,9 +180,7 @@ function Navbar() {
         </div>
         <div>
         </div>
-        <div>
-          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
-          </div>
+       
       </div>
     )
 }
