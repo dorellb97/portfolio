@@ -30,9 +30,8 @@ export default function HomeCom() {
       <div className={styles.hideTab}>
         <TopPostsView />
         <div>
-        <script async="async" data-cfasync="false" src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
-<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
-        {/* <iframe src="//cavalryconvincing.com/watchnew?key=d826116ece53ad17fb6e20679b7522d4"  frameborder="0" scrolling="no"></iframe>  */}
+        
+         <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938"  frameborder="0" scrolling="no"></iframe>  
       </div>
       </div>
 
