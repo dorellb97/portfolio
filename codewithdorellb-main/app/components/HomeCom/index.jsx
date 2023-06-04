@@ -21,7 +21,7 @@ export default function HomeCom() {
         <Part1 />
         <div className={styles.hideWeb}>
           <TopPostsView />
-          <iframe src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+          <iframe src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4/invoke.js" width="300" height="250" frameborder="0" scrolling="no"></iframe>
         </div>
         <Part3 />
         {/* <TestComponent /> */}
