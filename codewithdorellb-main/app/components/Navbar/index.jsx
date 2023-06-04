@@ -21,19 +21,7 @@ function Navbar() {
     const dispatch = useDispatch();
 
    
-    const loadAd = () => {
-      const script = document.createElement('script');
-      script.src =    'http' +
-      (location.protocol === 'https:' ? 's' : '') +
-      '://www.profitabledisplaynetwork.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342/invoke.js'
-      script.async = true;
-      document.getElementById('ad-container').appendChild(script);
-    };
-  
-    useEffect(() => {
-      loadAd();
-    }, []);
-   
+    
 
     const onLogout = () => {
         logout();
@@ -104,12 +92,11 @@ function Navbar() {
           <a href='https://www.instagram.com/codewith_dorell.b/' style={{textDecoration: "none"}}><Image src="/instagram.svg" width={35} height={35}/></a>
           <a href='https://t.me/codewith_dorellb' style={{textDecoration: "none"}}><Image src="/tg.svg" width={35} height={35}/></a>
           <a href='https://www.youtube.com/@codewith_Dorell.B' style={{textDecoration: "none"}}><Image src="/youtube.svg" width={35} height={47}/></a>
-          </div>
-          <div>
-          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="320"width ="50" align-items="center" frameborder="0" scrolling="no"></iframe>
-          </div>
+          </div>   
           <div className={styles.menu}>
-          
+          <div>
+          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
+          </div>
           {isOpen ?
           <>
         <div className={styles.backmenu}>
@@ -195,7 +182,9 @@ function Navbar() {
         </div>
         <div>
         </div>
-         <div id="ad-container" height="90px" width="728px"></div> 
+        <div>
+          <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
+          </div>
       </div>
     )
 }
