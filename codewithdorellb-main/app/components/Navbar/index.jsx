@@ -25,7 +25,7 @@ function Navbar() {
       const script = document.createElement('script');
       script.src =    'http' +
       (location.protocol === 'https:' ? 's' : '') +
-      '://www.profitabledisplaynetwork.com/fbfe14d99dd78af78f889fa9e7198342/invoke.js'
+      '://www.profitabledisplaynetwork.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342/invoke.js'
       script.async = true;
       document.getElementById('ad-container').appendChild(script);
     };

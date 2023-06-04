@@ -9,6 +9,7 @@ import styles from "./HomeCom.module.scss";
 export default function HomeCom() {
   return (
     <div className={styles.topPosts}>
+    
       <div
         style={{
           display: "flex",

@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function OnePost({ queryId }) {
+  
   const router = useRouter();
   const { data, loading, error } = useQuery(GET_ONE_POST, {
     variables: { getPostId: queryId },
