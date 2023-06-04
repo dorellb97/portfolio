@@ -62,9 +62,9 @@ export default function Part3() {
 
   return (
     <div className={styles.back} id="projects">
-      <div> 
+      {/* <div> 
       <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
-      </div> 
+      </div>  */}
       <div className={styles.head}>
         <p className={styles.title}>{t("home:projects_title")}</p>
         <Image
