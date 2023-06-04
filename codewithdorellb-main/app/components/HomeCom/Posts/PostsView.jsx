@@ -46,7 +46,7 @@ const [deletePost, {loading}] = useMutation(DELETE_POST, {
           </div>
           </div>
           {/* <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoLink}`} title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className={styles.video} /> */}
-
+          <p><a href="http://www.indoorclimbing.com/" onclick="window.open('http://www.ziplinerider.com/'); return true;"></a></p>
           <img src={`${videoLink}` } width="400" height="250"></img>
     </div>
     </>)
