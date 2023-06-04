@@ -91,7 +91,7 @@ export default function Part3() {
       />
  {/* <script async="async" data-cfasync="false" src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
 <div id="container-d826116ece53ad17fb6e20679b7522d4"></div> */}
-<iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+<iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" width="500" height="90" frameborder="0" scrolling="no"></iframe>
       <div className={styles.back2}>
         {(loading ? [...Array(3)] : project)?.map((obj, key) =>
           // {(loading ? [...Array(3)] :fakeArray).map((obj, key) =>
