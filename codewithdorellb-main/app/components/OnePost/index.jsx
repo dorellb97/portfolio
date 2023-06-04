@@ -71,7 +71,7 @@ export default function OnePost({ queryId }) {
     //cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f
     <div className={styles.preback}>
       <div className={styles.back}>
-      <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e'" width="1200" height="110" frameborder="0" scrolling="no"></iframe>
+      <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e'"  frameborder="0" scrolling="no"></iframe>
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
