@@ -23,6 +23,7 @@ export default function Disclaimer() {
         have the same meaning regardless of whether they appear in singular or
         in plural.
       </p>
+      <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
       <h2>Definitions</h2>
       <p>For the purposes of this Disclaimer:</p>
       <ul>
@@ -59,6 +60,7 @@ export default function Disclaimer() {
         The Company assumes no responsibility for errors or omissions in the
         contents of the Service.
       </p>
+      <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
       <p>
         In no event shall the Company be liable for any special, direct,
         indirect, consequential, or incidental damages or any damages

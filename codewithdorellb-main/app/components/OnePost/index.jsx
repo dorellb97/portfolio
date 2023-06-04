@@ -136,6 +136,7 @@ export default function OnePost({ queryId }) {
           }}
         />
         </div>
+        <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" witdh="728" hight="90" align-items="center" frameborder="0" scrolling="no"></iframe> 
       </div>
     </div>
     
