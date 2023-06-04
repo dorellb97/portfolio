@@ -30,7 +30,7 @@ export default function HomeCom() {
       <div className={styles.hideTab}>
         <TopPostsView />
         <div>
-        <iframe src="//cavalryconvincing.com/d826116ece53ad17fb6e20679b7522d4" width="300" height="250" frameborder="0" scrolling="no"></iframe> 
+        <iframe src="//cavalryconvincing.com/watchnew?key=d826116ece53ad17fb6e20679b7522d4" width="300" height="250" frameborder="0" scrolling="no"></iframe> 
       </div>
       </div>
 

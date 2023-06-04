@@ -78,7 +78,7 @@ const TopPostsView = ({ id, title, videoLink, sourceCode }) => {
                  
               </div>
               
-            
+              
             );
           })}
         </div>

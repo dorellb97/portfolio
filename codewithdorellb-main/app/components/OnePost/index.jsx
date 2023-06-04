@@ -74,7 +74,7 @@ export default function OnePost({ queryId }) {
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
-
+          <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" width="728" height="90" frameborder="0" scrolling="no"></iframe>
           <div className={styles.box}>
             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a>
           </div>
