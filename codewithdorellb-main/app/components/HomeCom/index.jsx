@@ -21,7 +21,15 @@ export default function HomeCom() {
         <Part1 />
         <div className={styles.hideWeb}>
           <TopPostsView />
-          <div  alignItems= "center">
+          <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100vw",
+          gap: "100px",
+        }}
+      >
           <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
      </div>
      </div>
@@ -32,16 +40,7 @@ export default function HomeCom() {
       </div>
       <div className={styles.hideTab}>
         <TopPostsView />
-       
-        <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100vw",
-          gap: "100px",
-        }}
-      >
+        <div>
          <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>  
          </div>
       </div>
