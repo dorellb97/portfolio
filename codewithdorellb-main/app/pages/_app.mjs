@@ -86,7 +86,7 @@ const App = ({
           params ="{}"
           onError={ (e) => { console.error('Script failed to load', e) }}
       /> */}
-
+<script type='text/javascript' src='//cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f.js'></script>
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6283396829393644"
      crossorigin="anonymous"></script> 
         <Component {...pageProps} />
