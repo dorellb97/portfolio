@@ -68,9 +68,10 @@ export default function OnePost({ queryId }) {
 
 
   return (
-    
+    //cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f
     <div className={styles.preback}>
       <div className={styles.back}>
+      <iframe src="//cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f" width="728" height="90" frameborder="0" scrolling="no"></iframe>
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
