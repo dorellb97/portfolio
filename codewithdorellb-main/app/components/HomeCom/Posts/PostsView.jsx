@@ -40,7 +40,7 @@ const [deletePost, {loading}] = useMutation(DELETE_POST, {
           </p>
           <div className={styles.box}>
             {/* <a href={`https://www.youtube.com/watch?v=${videoLink}`}><button>Explained video</button></a> */}
-            <a href="{`/projects/${id}`}" target="_blank" onclick="window.open(&quot;http://www.tourism.gov.my/&quot;);"><button>Source code</button></a>
+            <a href={`/projects/${id}`} target="_blank" onclick="window.open(&quot;http://www.tourism.gov.my/&quot;);"><button>Source code</button></a>
             {/* <a href={`/projects/${id}`}><button>Source code</button></a> */}
           </div>
           </div>
