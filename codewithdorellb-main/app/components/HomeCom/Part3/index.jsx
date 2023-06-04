@@ -63,6 +63,7 @@ export default function Part3() {
   return (
     <div className={styles.back} id="projects">
       <div className={styles.head}>
+      <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
         <p className={styles.title}>{t("home:projects_title")}</p>
         <Image
           src="/arrow.svg"
@@ -81,7 +82,7 @@ export default function Part3() {
         ))}
       </select>
       </div>  */}
-<iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+
       <input
         type="search"
         placeholder="Search here..."
