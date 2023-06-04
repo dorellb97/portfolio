@@ -32,9 +32,9 @@ const Layout = ({ children }) => {
 <div className={montserrat.className}>
     
 <Navbar />
-<div>
+{/* <div>
           <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
-          </div>
+          </div> */}
 {children}
 <Footer />
 </div>
