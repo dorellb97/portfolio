@@ -71,11 +71,11 @@ export default function OnePost({ queryId }) {
     //cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f
     <div className={styles.preback}>
       <div className={styles.back}>
-      <iframe src="//cavalryconvincing.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+      <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e'" width="1200" height="110" frameborder="0" scrolling="no"></iframe>
         <div className={styles.head}>
           <p className={styles.date_text}>{`Published ${creationDate}`}</p>
           <p className={styles.title}>{data?.getPost?.title}</p>
-          <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+          <iframe src="//cavalryconvincing.com/watchnew?key=fbfe14d99dd78af78f889fa9e7198342" width="900" height="100" frameborder="0" scrolling="no"></iframe>
           <div className={styles.box}>
             <a href={`https://www.youtube.com/channel/UCdJ38tbKf_VG8lHm1StjaUA`}><button>YouTube Channel</button></a>
           </div>
