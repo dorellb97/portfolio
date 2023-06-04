@@ -62,7 +62,7 @@ const App = ({
         :
       <Layout>
         <Head>
-        
+        <script type='text/javascript' src='//cavalryconvincing.com/98/70/dd/9870dd9e6d88069ec9a7268628a19eed.js'></script>
         </Head>
         <main>
         <>
