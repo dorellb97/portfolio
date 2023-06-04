@@ -22,7 +22,17 @@ export default function HomeCom() {
       >
         <Part1 />
         <div className={styles.hideWeb}>
+        <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100vw",
+          gap: "100px",
+        }}
+      >
         <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
+        </div>
           <TopPostsView />
           <div
         style={{
@@ -38,6 +48,17 @@ export default function HomeCom() {
           <div>
           <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="400" height="250" frameborder="0" scrolling="no"></iframe>
      </div>
+     <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100vw",
+          gap: "100px",
+        }}
+      >
+          <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
+           </div>
      <div>
      <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
      </div>
@@ -53,6 +74,9 @@ export default function HomeCom() {
          <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>  
          <div>
          <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="400" height="250" frameborder="0" scrolling="no"></iframe>
+         </div>
+         <div>
+         <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>  
          </div>
          <div>
          <iframe src="//cavalryconvincing.com/watchnew?key=9281de430afa613004176a26d7ff887c" width="300" height="250" frameborder="0" scrolling="no"></iframe>
