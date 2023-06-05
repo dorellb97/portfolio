@@ -16,6 +16,7 @@ import { ApolloCache } from "@apollo/client/core";
 import Loader from "../components/Loader/index.jsx";
 import Script from "next/script";
 import ReactGA from "react-ga";
+import { Analytics } from "@vercel/analytics/react";
 
 const TRACKING_ID = "G-P12ML1XCLR"; // YOUR_OWN_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
@@ -98,6 +99,7 @@ const App = ({ Component, pageProps }) => {
                     crossorigin="anonymous"
                   ></script>
                   <Component {...pageProps} />
+                  <Analytics />
                 </>
               </main>
             </Layout>
