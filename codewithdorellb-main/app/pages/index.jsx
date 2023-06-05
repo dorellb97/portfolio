@@ -18,7 +18,7 @@ export default function Hello() {
    <Head>
    <link rel="icon" href="/logo.png"/>
         <title>codewithdorellb </title>
-        <meta name="description" content="codewithdorellb.com it's a site where you can fine the source code of javascript projects, css and also games." />
+        <meta name="description" content="codewithdorellb JavaScript project css" />
       </Head>
   <HomeCom />
   </>
