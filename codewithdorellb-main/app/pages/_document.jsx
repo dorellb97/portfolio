@@ -6,9 +6,9 @@ export default function Document() {
       <Head>
         <meta
           name="keywords"
-          content="web, development, site, website, web-creation,website creation, modern website, SEO, вебсайты, разработка, веб"
+          content="web, development, site, website, javascript, css, codewithdorellb, website creation, modern website, SEO, вебсайты, разработка, веб"
         />
-        <meta name="author" content="Dorel Boencius" />
+        <meta name="author" content="Dorel Boenciuc" />
         <meta
           name="google-site-verification"
           content="F5p8KmxlsIE2HtKxI9-wL9AnENChWbYL0Ai0sX-Qckk"
@@ -120,6 +120,21 @@ export default function Document() {
         <script
           type="text/javascript"
           src="//cavalryconvincing.com/98/70/dd/9870dd9e6d88069ec9a7268628a19eed.js"
+        ></script>
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P12ML1XCLR"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-P12ML1XCLR');
+                `,
+          }}
         ></script>
       </Head>
       <body>
