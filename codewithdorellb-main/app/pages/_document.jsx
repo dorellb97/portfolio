@@ -10,7 +10,7 @@ export default function Document() {
         <meta name="author" content="Dorel Boencius" />
         <meta name="google-site-verification" content="F5p8KmxlsIE2HtKxI9-wL9AnENChWbYL0Ai0sX-Qckk" />
         <meta name="description" content="codewithdorellb javascript projects, CSS, HTML, GAMES"/>
-        <meta name="title" content="codewithdorellb"/>
+        
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
