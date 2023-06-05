@@ -1,12 +1,12 @@
 {
-  "name": "webXwiz",
+  "name": "codewithdorellb",
   "private": true,
   "license": "MIT",
   "type": "commonjs",
   "author": {
-    "name": "Web X Wiz",
-    "email": "web.wizard.ui.ux@gmail.com",
-    "url": "https://web-x-wiz.com"
+    "name": "dorell b",
+    "email": "codewithdorellb@gmail.com",
+    "url": "https:/codewithdorellb.com"
   },
   "repository": {
     "type": "git",
