@@ -67,7 +67,7 @@ const App = ({
         </Head>
         <main>
         <>
-        
+       
     {/* <Script id="Adsense-id" data-ad-client="ca-pub-6283396829393644"
   async strategy="afterInteractive"
   onError={ (e) => { console.error('Script failed to load', e) }}
