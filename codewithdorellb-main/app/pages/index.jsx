@@ -21,15 +21,6 @@ export default function Hello() {
           name="description"
           content="codewithdorellb JavaScript project css"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-P12ML1XCLR"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-P12ML1XCLR');
-        </script>
       </Head>
       <HomeCom />
     </>
