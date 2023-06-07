@@ -7,12 +7,21 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-
-
-<url><loc>https://codewithdorellb.com/</loc></url>
-<url><loc>https://codewithdorellb.com/about-us</loc></url>
-<url><loc>https://codewithdorellb.com/disclaimer</loc></url>
-<url><loc>https://codewithdorellb.com/privacy-policy</loc></url></urlset>
-
+<url>
+<loc>https://codewithdorellb.com/</loc>
+<lastmod>2023-06-07T14:39:10+00:00</lastmod>
+</url>
+<url>
+<loc>https://codewithdorellb.com/about-us</loc>
+<lastmod>2023-06-07T14:43:21+00:00</lastmod>
+</url>
+<url>
+<loc>https://codewithdorellb.com/disclaimer</loc>
+<lastmod>2023-06-07T14:44:04+00:00</lastmod>
+</url>
+<url>
+<loc>https://codewithdorellb.com/privacy-policy</loc>
+<lastmod>2023-06-07T14:44:48+00:00</lastmod>
+</url>
 
 </urlset>
