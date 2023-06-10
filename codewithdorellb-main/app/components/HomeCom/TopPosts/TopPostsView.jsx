@@ -13,8 +13,8 @@ import { useDebounce } from "@react-hooks-library/core";
 
 const postToBeShownIds = [
   "64623f0b482188c78ac55eb7", // snake 
-  "6463e2ddfe47407b60471ca8",//netflix 
-  "6463aab3fe47407b60471bea", //maze game
+  "647633f89b4673990bb24571",//menu bar 
+  "6463aab3fe47407b60471bea", //netflix 
   "6463e0eafe47407b60471c9b", // flipy bird
   "6462417a482188c78ac55ed0", //race
 ];
