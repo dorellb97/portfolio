@@ -145,6 +145,8 @@ export default function Document() {
         <NextScript />
         <script type='text/javascript' src='//collectorcommander.com/7b/8b/46/7b8b46a1b228fd1ee289d7f9f358998f.js'></script>
       </body>
+      <script async="async" data-cfasync="false" src="//collectorcommander.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
     </Html>
   );
 }
