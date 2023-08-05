@@ -36,6 +36,8 @@ const Layout = ({ children }) => {
           <iframe src="//cavalryconvincing.com/watchnew?key=b90e97a3d0ec53ba62200197912fd06e" height ="50"width ="320" align-items="center" frameborder="0" scrolling="no"></iframe>
           </div> */}
 {children}
+<script async="async" data-cfasync="false" src="//collectorcommander.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
 <Footer />
 </div>
 </>
