@@ -43,11 +43,21 @@ export default function HomeCom() {
           gap: "100px",
         }}
       >
+        
           <iframe src="//cavalryconvincing.com/watchnew?key=57372e2a84c5b521c3b130c6d039f938" height ="300"width ="160" align-items="center" frameborder="0" scrolling="no"></iframe>
            </div>
+           <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100vw",
+          gap: "100px",
+        }}
+      >
            <script async="async" data-cfasync="false" src="//genuinesuperman.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
 <div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
-          
+</div>
      {/* <div
         style={{
           display: "flex",
