@@ -20,10 +20,12 @@ export default function HomeCom() {
           gap: "100px",
         }}
       >
+
+<script async="async" data-cfasync="false" src="//genuinesuperman.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
+<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
         <Part1 />
 
-        <script async="async" data-cfasync="false" src="//genuinesuperman.com/d826116ece53ad17fb6e20679b7522d4/invoke.js"></script>
-<div id="container-d826116ece53ad17fb6e20679b7522d4"></div>
+       
 
         <div className={styles.hideWeb}>
         {/* <div
